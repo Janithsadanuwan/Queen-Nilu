@@ -81,9 +81,9 @@
             "yt_chan": "\n🎬 *Author* : ",
             "yt_link": "\n🌐 *Youtube link* : ",
             "yt_views": "\n👁️ *Views* : ",
-            "DOWNLOADING_SONG":"\n```I'm Searching your song*_ ✨➾🔎```\n",
-            "UPLOADING_SONG":"\n```Im Uploading your song*_ ✨➾🚀```\n",
-            "DOWNLOADING_VIDEO": "\n```I'm Searching your video*_ ✨➾🔎```\n",
+            "DOWNLOADING_SONG":"\n```*I'm Searching your song*_ ✨➾🔎```\n",
+            "UPLOADING_SONG":"\n```*Im Uploading your song*_ ✨➾🚀```\n",
+            "DOWNLOADING_VIDEO": "\n```*I'm Searching your video*_ ✨➾🔎```\n",
             "UPLOADING_VIDEO":"\n```Im Uploading your song*_ ✨➾🚀```\n",
             "NO_RESULT": "*🧰 Please try again later.*",
             "LIMIT": "*Maximum upload size exceeded!*\n\n_Contact bot owner to increase limit: "
