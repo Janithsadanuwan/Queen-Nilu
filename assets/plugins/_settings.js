@@ -1,25 +1,14 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
-const _settings = QueenAmdi.settings
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
+const _settings = QueenNilu.settings
 const {MessageType} = require('@blackamda/queenamdi-web-api');
 
 const Language = require('../language');
@@ -37,8 +26,8 @@ let baseURI = '/apps/' + Build.HEROKU.APP_NAME;
 
 
 // ======== Log Number WorkType ========
-Amdi.operate({pattern: 'qaworktype', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => { 
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'qaworktype', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => { 
+    await QueenNilu.nilu_setup()
     if (Build.WORKTYPE == 'private') {
         var wktype = await _settings.wkbutton()
         await message.client.sendMessage(message.jid, wktype, MessageType.buttonsMessage, {quoted: message.data}); 
@@ -48,7 +37,7 @@ Amdi.operate({pattern: 'qaworktype', fromMe: true, dontAddCommandList: true, del
         await message.client.sendMessage(message.jid, wktypepvt, MessageType.buttonsMessage, {quoted: message.data});
     }
 }));
-Amdi.operate({pattern: 'qasetwtpublic', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => { 
+Nilu.operate({pattern: 'qasetwtpublic', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => { 
     await message.client.sendMessage(message.jid, Lang.SUCPUB, MessageType.text);
     await message.client.sendMessage(message.jid, Lang.RESTART, MessageType.text);
     await new Promise(r => setTimeout(r, 1200));
@@ -58,7 +47,7 @@ Amdi.operate({pattern: 'qasetwtpublic', fromMe: true, dontAddCommandList: true, 
         } 
     });
 }));
-Amdi.operate({pattern: 'qasetwtprivate', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => { 
+Nilu.operate({pattern: 'qasetwtprivate', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => { 
     await message.client.sendMessage(message.jid, Lang.SUCPVT, MessageType.text);
     await message.client.sendMessage(message.jid, Lang.RESTART, MessageType.text);
     await new Promise(r => setTimeout(r, 1200));
@@ -71,12 +60,12 @@ Amdi.operate({pattern: 'qasetwtprivate', fromMe: true, dontAddCommandList: true,
 // ==============================
 
 // ============Heroku settings=====================
-Amdi.operate({pattern: 'settings', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message) => {
+Nilu.operate({pattern: 'settings', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message) => {
     var menu = await _settings.menu()
     await message.client.sendMessage(message.jid, menu, MessageType.listMessage, {quoted: message.data});
 }));
 
-Amdi.operate({pattern: 'qaherokuset ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'qaherokuset ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
     if (match[1] == 'bad') {
         var badbut = await _settings.badbutton()
         await message.client.sendMessage(message.jid, badbut, MessageType.buttonsMessage, {quoted: message.data}); 
@@ -89,8 +78,8 @@ Amdi.operate({pattern: 'qaherokuset ?(.*)', fromMe: true, dontAddCommandList: tr
         var linkbut = await _settings.linkbutton()
         await message.client.sendMessage(message.jid, linkbut, MessageType.buttonsMessage, {quoted: message.data});
     }
-    else if (match[1] == 'amdichat') {
-        var linkbut = await _settings.amdichat()
+    else if (match[1] == 'niluchat') {
+        var linkbut = await _settings.niluchat()
         await message.client.sendMessage(message.jid, linkbut, MessageType.buttonsMessage, {quoted: message.data});
     }
     else if (match[1] == 'lang') {
@@ -103,7 +92,7 @@ Amdi.operate({pattern: 'qaherokuset ?(.*)', fromMe: true, dontAddCommandList: tr
     }
 }));
 
-Amdi.operate({pattern: 'qasetherokubad ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'qasetherokubad ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
     if (match[1] == 'false') {
         await message.client.sendMessage(message.jid, '📴 *ANTIBAD disabled.*', MessageType.text);
     } else if (match[1] == 'true') {
@@ -118,7 +107,7 @@ Amdi.operate({pattern: 'qasetherokubad ?(.*)', fromMe: true, dontAddCommandList:
     });
 }))
 
-Amdi.operate({pattern: 'qasetherokubug ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'qasetherokubug ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
     if (match[1] == 'false') {
         await message.client.sendMessage(message.jid, '📴 *ANTIBUG disabled.*', MessageType.text);
     } else if (match[1] == 'true') {
@@ -133,7 +122,7 @@ Amdi.operate({pattern: 'qasetherokubug ?(.*)', fromMe: true, dontAddCommandList:
     });
 }))
 
-Amdi.operate({pattern: 'qasetherokulink ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'qasetherokulink ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
     if (match[1] == 'false') {
         await message.client.sendMessage(message.jid, '📴 *ANTILINK disabled.*', MessageType.text);
     } else if (match[1] == 'true') {
@@ -148,7 +137,7 @@ Amdi.operate({pattern: 'qasetherokulink ?(.*)', fromMe: true, dontAddCommandList
     });
 }))
 
-Amdi.operate({pattern: 'qasetherokulang ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'qasetherokulang ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
     if (match[1] == 'SI') {
         await message.client.sendMessage(message.jid, '*Sinhala language setted.*', MessageType.text);
     } else if (match[1] == 'EN') {
@@ -163,7 +152,7 @@ Amdi.operate({pattern: 'qasetherokulang ?(.*)', fromMe: true, dontAddCommandList
     });
 }))
 
-Amdi.operate({pattern: 'qasetherokuwkty ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'qasetherokuwkty ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
     if (match[1] == 'private') {
         await message.client.sendMessage(message.jid, '🛅 *Private mode activated!*', MessageType.text);
     } else if (match[1] == 'public') {
@@ -178,17 +167,17 @@ Amdi.operate({pattern: 'qasetherokuwkty ?(.*)', fromMe: true, dontAddCommandList
     });
 }))
 
-Amdi.operate({pattern: 'qasetherokuamdichat ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'qasetherokuniluchat ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false}, (async (message, match) => {
     if (match[1] == 'false') {
-        await message.client.sendMessage(message.jid, '📴 *AMDI_CHAT disabled.*', MessageType.text);
+        await message.client.sendMessage(message.jid, '📴 *NILU_CHAT disabled.*', MessageType.text);
     } else if (match[1] == 'true') {
-        await message.client.sendMessage(message.jid, '🔛 *AMDI_CHAT enabled.*', MessageType.text);
+        await message.client.sendMessage(message.jid, '🔛 *NILU_CHAT enabled.*', MessageType.text);
     }
     await message.client.sendMessage(message.jid, Lang.RESTART, MessageType.text);
     await new Promise(r => setTimeout(r, 1200));
     await heroku.patch(baseURI + '/config-vars', { 
         body: { 
-            ['AMDI_CHAT']: match[1]
+            ['NILU_CHAT']: match[1]
         } 
     });
 }))
