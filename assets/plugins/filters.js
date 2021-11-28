@@ -1,30 +1,19 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
+const QueenNilu = require('queennilu-public');
+const NIlu = QueenNilu.events
 const {MessageType} = require('@blackamda/queenamdi-web-api');
 const FilterDb = require('./sql/filters');
 
 const Language = require('../language');
 const Lang = Language.getString('filters');
 
-Amdi.operate({pattern: 'filter ?(.*)', fromMe: true,  deleteCommand: false,  desc: Lang.FILTER_DESC, dontAddCommandList: true}, (async (message, match) => {
+NIlu.operate({pattern: 'filter ?(.*)', fromMe: true,  deleteCommand: false,  desc: Lang.FILTER_DESC, dontAddCommandList: true}, (async (message, match) => {
     match = match[1].match(/[\'\"\“](.*?)[\'\"\“]/gsm);
 
     if (match === null) {
@@ -45,7 +34,7 @@ Amdi.operate({pattern: 'filter ?(.*)', fromMe: true,  deleteCommand: false,  des
     }
 }));
 
-Amdi.operate({pattern: 'stop ?(.*)', fromMe: true,  deleteCommand: false,  desc: Lang.STOP_DESC, dontAddCommandList: true}, (async (message, match) => {
+NIlu.operate({pattern: 'stop ?(.*)', fromMe: true,  deleteCommand: false,  desc: Lang.STOP_DESC, dontAddCommandList: true}, (async (message, match) => {
     match = match[1].match(/[\'\"\“](.*?)[\'\"\“]/gsm);
     if (match === null) {
         return await message.client.sendMessage(message.jid,Lang.NEED_REPLY + '\n*Example:* ```.stop "hi"```',MessageType.text)
@@ -61,7 +50,7 @@ Amdi.operate({pattern: 'stop ?(.*)', fromMe: true,  deleteCommand: false,  desc:
 }));
 
 
-Amdi.operate({on: 'text', fromMe: false}, (async (message, match) => {
+NIlu.operate({on: 'text', fromMe: false}, (async (message, match) => {
     var filtreler = await FilterDb.getFilter(message.jid);
     if (!filtreler) return; 
     filtreler.map(
