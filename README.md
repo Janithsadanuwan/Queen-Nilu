@@ -10,8 +10,8 @@ Janithsadanuwan   <a href="https://github.com/janith12345sa/Janithsadanuwan">*Ab
 
   
 <div align="center">
-  
  <img src="https://i.ibb.co/Z1kVpZZ/Ephoto360-com-161a3a1ec2dff5.jpg" width="300" height="300
+                                                                                          
   <h1> 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙</h1>
 </div>
 <p align="center">
