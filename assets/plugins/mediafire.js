@@ -1,25 +1,14 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
-const download = QueenAmdi.mediafire
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
+const download = QueenNilu.mediafire
 const axios = require('axios')
 const {MessageType, Mimetype} = require('@blackamda/queenamdi-web-api');
 let LOL = Build.WORKTYPE == 'public' ? false : true
@@ -27,8 +16,8 @@ let LOL = Build.WORKTYPE == 'public' ? false : true
 const Language = require('../language');
 const Lang = Language.getString('mediafire');
 
-Amdi.operate({ pattern: 'mediafire ?(.*)', fromMe: LOL, desc: Lang.MF_DESC,  deleteCommand: false}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'mediafire ?(.*)', fromMe: LOL, desc: Lang.MF_DESC,  deleteCommand: false}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const mflink = match[1]
     if (mflink === '') return await message.client.sendMessage(message.jid,Lang.NEEDURL, {quoted: message.data});
 
