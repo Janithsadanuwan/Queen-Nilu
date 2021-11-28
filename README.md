@@ -1,4 +1,4 @@
-# 😈kingbot😈  *whatsapp bot©*
+# Queen Niluu..❤🧚‍♀️  *whatsapp bot©*
 
 Janithsadanuwan   <a href="https://github.com/janith12345sa/Janithsadanuwan">*About me*</a>
 
@@ -8,14 +8,14 @@ Janithsadanuwan   <a href="https://github.com/janith12345sa/Janithsadanuwan">*Ab
   
 <div align="center">
 
-## [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2315B6F7&lines=Welcome+to+%F0%9F%98%88kingbot%F0%9F%98%88;Created+By+Janith+Sadanuwan)](https://git.io/typing-svg)
+## [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2315B6F7&lines=Welcome+to+%F0%9F%98%88QueenNilu🧚‍♀️❤%F0%9F%98%88;Created+By+Janith+Sadanuwan)](https://git.io/typing-svg)
 
  </a>
 
   
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/89557325?s=400&u=c8aa82784bbfa47a02c498892f60e727db6c4f71&v=4" width="300" height="300">
-  <h1>😈kingbot😈</h1>
+  <h1>Queen Nilu🧚‍♀️❤</h1>
 </div>
 <p align="center">
     Whatsapp භාවිතා කිරීම පහසු සහ විනෝදජනක කරයි. Whatsapp සඳහා පළමු සිංහල පරිශීලක බොට් ද වේ.
