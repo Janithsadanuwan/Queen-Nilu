@@ -1,14 +1,14 @@
 {
-    "name": "queen_amdi",
+    "name": "Queen-Nilu",
     "version": "3.5.0v",
-    "description": "Queen Amdi Bot project - a Whatsapp userbot helping to improve your Whatsapp experience.",
-    "main": "./QueenAmdi/assets/module.js",
+    "description": "Queen-Nilu Bot project - a Whatsapp userbot helping to improve your Whatsapp experience.",
+    "main": "./Queen-Nilu/assets/module.js",
     "scripts": {
       "start": "supervisor -s assets/module.js"
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/BlackAmda/QueenAmdi.git"
+      "url": "git+https://github.com/Janithsadanuwan/Queen-Nilu.git"
     },
     "keywords": [
       "whatsapp"
