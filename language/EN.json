@@ -23,7 +23,7 @@
             "DELETED": "*✅ Plugin successfully deleted!*"
         },
         "_settings": {
-            "RESTART": "*💬 King bot automatically restarting!*",
+            "RESTART": "*💬 Queen Nilu automatically restarting!*",
             "SUCPUB": "✅ Public mode activated!",
             "SUCPVT": "✅ Private mode activated!"
         },
@@ -53,7 +53,7 @@
             "NEED_SUB": "You must type a group name.",
             "NEED_DESC": "You must type a group description.",
             "END": "Clear chat",
-            "SEARCH": "To view the current plugin list supported to King bot.",
+            "SEARCH": "To view the current plugin list supported to Queen Nilu.",
             "REVOKED": "✅ Group link successfully revoked.",
             "REMOVE_ALL": "_Removing all members started!_"
         },
@@ -126,7 +126,7 @@
             "GOODBYE_SETTED": "*✅ Goodbye message has been setted successfully!*"
         },
         "heroku": {
-            "RESTART_DESC": "Restart King bot",
+            "RESTART_DESC": "Restart Queen Nilu",
             "RESTART_MSG": "```♻️ Restarting...```",
             "SHUTDOWN_DESC": "To shut down bot",
             "SHUTDOWN_MSG": "```Shutdown ⛔```",
@@ -398,9 +398,9 @@
         },
         "unlimiteddata":{
             "ehi_desc": "Make your data packages to unlimited data packages.\n*(Only for Sri Lankan Users)*",
-            "ehi_help": "╔═══════❪💃🏻♥️❫\n\n▷ *❖ King bot Unlimited Data ❖* ◁\n\n```[EHI Method]```\n\n╚═════≪ •❈• ≫═════",
+            "ehi_help": "╔═══════❪💃🏻♥️❫\n\n▷ *❖ Queen Nilu Unlimited Data ❖* ◁\n\n```[EHI Method]```\n\n╚═════≪ •❈• ≫═════",
             "ehi_info": "*✨ What is EHI file?*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\nAn EHI file is a config file used by Evozi HTTP Injector, an Android app that allows users to browse the Internet via a VPN.\nThese files contain settings to configure HTTP Injector, including server login credentials and security/locking information.\nHTTP Injector allows users to spoof their location and mask their identity while browsing the Internet, using an SSH connection and proxy servers.\nIt also allows users to access websites that have been blocked by their ISP's(Internet Service Provider Or your SIM company) firewall.\nAs such, the app and the EHI files associated with it are popular in countries that restrict or monitor their populace's Internet access.\n\n*In Sri Lanka,* we have unlimited packages from so many ISP.\n\n(Ex: Dialog Rs.97 Unlimited Facebook, WhatsApp & YouTube)\n\nSo, we can use this oppurtunity to crack their block and visit other sites blocker and brwose unlimited internet by using EHI.\n\n```[Author : Black Amda]```",
-            "ehi_how": "*How to install EHI?*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n_Note : You need to activate unilimited data package. And DON'T TRY THIS IF YOU ALREADY HAVE DATA REMAINING._\n\n1️⃣ Download and install HTTP Injector. (Type *.ehi* click download files button to get apk)\n\n2️⃣ Download one page of EHI files from bot.\n🔧 Type *.ehi* and click Download files and select All EHI files to get EHI files.\n\n3️⃣ Select your suitable EHI for your package.\n```Example :``` If you have activated facebook only unlimited package from SIM. You have to choose EHI Files with name *Facebook*. Then, you can browse other sites from your facebook only unlimited data package.\n\n4️⃣ Now, click on your selected EHI file and open from HTTP Injector.\n\n5️⃣ Click *Start* button to connect EHI config.\n\nNow you can ENJOY UNLIMITED DATA.\n\nIf your connection slow, change EHI files from another server (US 01, US 02, SG).\n\nThese EHI files only valid for *30days* from import date. After that you have to get another set of EHI and renew. And also you can change server from Injector app settings.\n\n```King bot Team💃🏻♥️```"
+            "ehi_how": "*How to install EHI?*\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n_Note : You need to activate unilimited data package. And DON'T TRY THIS IF YOU ALREADY HAVE DATA REMAINING._\n\n1️⃣ Download and install HTTP Injector. (Type *.ehi* click download files button to get apk)\n\n2️⃣ Download one page of EHI files from bot.\n🔧 Type *.ehi* and click Download files and select All EHI files to get EHI files.\n\n3️⃣ Select your suitable EHI for your package.\n```Example :``` If you have activated facebook only unlimited package from SIM. You have to choose EHI Files with name *Facebook*. Then, you can browse other sites from your facebook only unlimited data package.\n\n4️⃣ Now, click on your selected EHI file and open from HTTP Injector.\n\n5️⃣ Click *Start* button to connect EHI config.\n\nNow you can ENJOY UNLIMITED DATA.\n\nIf your connection slow, change EHI files from another server (US 01, US 02, SG).\n\nThese EHI files only valid for *30days* from import date. After that you have to get another set of EHI and renew. And also you can change server from Injector app settings.\n\n```Queen Nilu Team💃🏻♥️```"
         },
         "unvoice": {
             "UV_DESC": "Convert mp3 into a WA voice message",
@@ -416,7 +416,7 @@
             "INVALID_HEROKU": "*❌ Your HEROKU_API_KEY wrong! Visit https://dashboard.heroku.com/account . Scroll down to API key. Click reveal buttong. Copy that API key and paste it in HEROKU_API_KEY config vars.*",
             "UPDATED": "*✅ Successfully updated!*",
             "UPDATED_LOCAL": "*✅ Successfully updated!*",
-            "AFTER_UPDATE": "*💬 King bot automatically restarting!*",
+            "AFTER_UPDATE": "*💬 Queen Nilu automatically restarting!*",
             "VERIFY_DESC": "Verify your bot officially.",
             "VERIFY": "*Your bot is verified!✅*",
             "VERIFIED": "*✅ Successfully verified!*",
@@ -447,8 +447,8 @@
             "PING_DESC": "Your ping.",
             "URL": "Shorten link.",
             "NEED": "*Need a link!*",
-            "AMDI_QR": "Get QR code to install King bot Bot.",
-            "HELP_QR": "1️⃣ Scan the *QR code.*\n\n2️⃣ Visit https://heroku.com/deploy?template=https://github.com/Janith sadanuwan/QueenAmdi to install the bot. _(Type *.getqr stop* to stop QR generating)_",
+            "AMDI_QR": "Get QR code to install Queen Nilu Bot.",
+            "HELP_QR": "1️⃣ Scan the *QR code.*\n\n2️⃣ Visit https://heroku.com/deploy?template=https://github.com/Janithsadanuwan/Queen-Nilu to install the bot. _(Type *.getqr stop* to stop QR generating)_",
             "INBOX": "*Please get QR from messaging to inbox. _(.getqr)_*"
         }
     }
