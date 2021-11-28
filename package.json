@@ -13,13 +13,13 @@
     "keywords": [
       "whatsapp"
     ],
-    "author": "Black Amda",
-    "developer": "AN Tech",
+    "author": "Janithsadanuwan",
+    "developer": "Janithsadanuwan",
     "license": "GPL-3.0-or-later",
     "bugs": {
-      "url": "https://github.com/BlackAmda/QueenAmdi/issues"
+      "url": "https://github.com/Janithsadanuwan/Queen-Nilu/issues"
     },
-    "homepage": "https://github.com/BlackAmda/QueenAmdi#readme",
+    "homepage": "https://github.com/Janithsadanuwan/Queen-Nilu#readme",
     "dependencies": {
       "@blackamda/queenamdi-web-api": "^1.0.2",
       "queenamdi-public": "^1.0.5",
