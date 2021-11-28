@@ -14,7 +14,7 @@
     "success_url": "https://dashboard.heroku.com/apps/",
     "stack": "container",
     "env":{
-        "AMDI_SESSION": {
+        "NILU_SESSION": {
             "description": "Paste the session code you received after scanning the QR from https://replit.com/@Janithsadanuwan/SCAN-QR-CODE",
             "required": true
         },
