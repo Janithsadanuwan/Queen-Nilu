@@ -79,7 +79,7 @@ Kingbot යනු WhatsApp සඳහා වන පරිශීලක බොට�
 Run on Repl.it
 
 #### 01. Click Run on Repl.it (Computer users) and Run the qr generator by clicking play button.
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@janith12345sa/KINGBOTjanith?v=1)
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@Janithsadanuwan/SCAN-QR-CODE?v=1)
 
 » දැන් ඔබට QR කේතයක් ලැබෙනු ඇත. ඔබේ Whatsapp වෙබ් මඟින් එය scan කරන්න.
 » Open WhatsApp > Linked devices > Link A device > Scan QR code
