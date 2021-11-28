@@ -1,24 +1,12 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const QueenNilu = QueenNilu.events
+const Build = QueenNilu.build
 const Heroku = require('heroku-client');
 const {MessageType} = require('@blackamda/queenamdi-web-api');
 const got = require('got');
@@ -35,9 +23,9 @@ const heroku = new Heroku({
 
 let baseURI = '/apps/' + Build.HEROKU.APP_NAME;
 
-Amdi.operate({pattern: 'install ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false,}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
-    if (match[1] === '') return await message.sendMessage(Lang.NEED_URL + '.install https://gist.github.com/BlackAmda/49afd28b1932095cc76facbcedef3482')
+Nilu.operate({pattern: 'install ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false,}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
+    if (match[1] === '') return await message.sendMessage(Lang.NEED_URL + '.install https://gist.github.com/Janithsadanuwan/49afd28b1932095cc76facbcedef3482')
     try {
         var url = new URL(match[1]);
     } catch {
@@ -74,8 +62,8 @@ Amdi.operate({pattern: 'install ?(.*)', fromMe: true, dontAddCommandList: true, 
     }
 }));
 
-Amdi.operate({pattern: 'plugin', fromMe: true, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'plugin', fromMe: true, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     var mesaj = Lang.INSTALLED_FROM_REMOTE;
     var plugins = await Db.PluginDB.findAll();
     if (plugins.length < 1) {
@@ -90,8 +78,8 @@ Amdi.operate({pattern: 'plugin', fromMe: true, deleteCommand: false, dontAddComm
     }
 }));
 
-Amdi.operate({pattern: 'remove(?: |$)(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'remove(?: |$)(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     if (match[1] === '') return await message.sendMessage(Lang.NEED_PLUGIN);
     if (!match[1].startsWith('__')) match[1] = '__' + match[1];
     var plugin = await Db.PluginDB.findAll({ where: {name: match[1]} });
