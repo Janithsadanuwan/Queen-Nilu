@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 
 const { MessageType, Mimetype } = require('@blackamda/queenamdi-web-api');
 const fs = require('fs');
@@ -46,7 +35,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
 }
 
 
-Amdi.operate({ pattern: 'info', fromMe: LOL, desc: Lang.INFO_DESC, deleteCommand: false}, async (message, match) => { 
+Nilu.operate({ pattern: 'info', fromMe: LOL, desc: Lang.INFO_DESC, deleteCommand: false}, async (message, match) => { 
         
     if (message.jid.includes('g.us')) {
 
@@ -90,7 +79,7 @@ Amdi.operate({ pattern: 'info', fromMe: LOL, desc: Lang.INFO_DESC, deleteCommand
     } 
 });
 
-Amdi.operate({ pattern: 'qawelinfo', fromMe: false, deleteCommand: false, dontAddCommandList: true}, async (message, match) => { 
+Nilu.operate({ pattern: 'qawelinfo', fromMe: false, deleteCommand: false, dontAddCommandList: true}, async (message, match) => { 
 
     var json = await message.client.groupMetadataMinimal(message.jid) 
 
@@ -110,12 +99,12 @@ Amdi.operate({ pattern: 'qawelinfo', fromMe: false, deleteCommand: false, dontAd
     );
 });
 
-Amdi.operate({pattern: 'covid ?(.*)', fromMe: LOL, desc: LANG.COVID_DESC,  deleteCommand: false}, async (message, match) => {
+Nilu.operate({pattern: 'covid ?(.*)', fromMe: LOL, desc: LANG.COVID_DESC,  deleteCommand: false}, async (message, match) => {
     if (match[1] === '') return await message.reply(LANG.NEED_CON);
         const url = `https://coronavirus-19-api.herokuapp.com/countries/${match[1]}`;
         const response = await got(url);
         const jsun = JSON.parse(response.body);
-        await message.client.sendMessage(message.jid, fs.readFileSync("./node_modules/queenamdi-public/media/gif/earth.mp4"), MessageType.video, {mimetype: Mimetype.gif, quoted: message.data, caption: LANG.COUNTRY + jsun.country + '\n\n' + LANG.CASES + jsun.cases + '\n' + LANG.TCASES + jsun.todayCases + '\n' + LANG.DEATHS + jsun.deaths + '\n' + LANG.TDEATHS + jsun.todayDeaths + '\n' + LANG.RECO + jsun.recovered + '\n' + LANG.CRIT + jsun.critical + '\n' + LANG.TEST + jsun.totalTests, thumbnail: qathmub });
+        await message.client.sendMessage(message.jid, fs.readFileSync("./node_modules/queennilu-public-public/media/gif/earth.mp4"), MessageType.video, {mimetype: Mimetype.gif, quoted: message.data, caption: LANG.COUNTRY + jsun.country + '\n\n' + LANG.CASES + jsun.cases + '\n' + LANG.TCASES + jsun.todayCases + '\n' + LANG.DEATHS + jsun.deaths + '\n' + LANG.TDEATHS + jsun.todayDeaths + '\n' + LANG.RECO + jsun.recovered + '\n' + LANG.CRIT + jsun.critical + '\n' + LANG.TEST + jsun.totalTests, thumbnail: qathmub });
 });
 
 //=================================
