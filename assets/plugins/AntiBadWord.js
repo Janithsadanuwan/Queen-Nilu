@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+░
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('qqueennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 const {MessageType,Mimetype} = require('@blackamda/queenamdi-web-api');
 const WA = "WA_DEFAULT_EPHEMERAL"
 
@@ -49,8 +38,8 @@ var antilink = ''
 if (Build.LANG == 'SI') antilink = '_*⛔ මෙහි links බෙදා නොගන්න.*_\n\n' + Build.CAP
 if (Build.LANG == 'EN') antilink = '_*⛔ Do not share links here.*_\n\n' + Build.CAP
 
-Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message, match) => {  
-    await QueenAmdi.amdi_setup()  
+Nilu.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message, match) => {  
+    await QueenNilu.Nilu_setup()  
     if (Build.ANTIBAD == 'true' && message.jid.includes('g.us')) {
         let getword1bad = new RegExp('fuck')
         let getword2bad = new RegExp('f u c k')
@@ -3004,7 +2993,7 @@ Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message
 }))
 
 Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message, match) => { 
-    await QueenAmdi.amdi_setup()
+    await QueenNilu.nilu_setup()
     const actmsg = "❉ Safe Mode Activating...."
     const GUARD = "*************************************\n*🛡️Queen Amdi Virus Shield🛡️*\n\n       👑👑\n       \n\n\n\n```✨✨Do Not Go Up✨✨```\n*ඉහලට යෑමෙන් වලිකින්න.*\n            *Clear Ribbon*\n    _👑WARNING👑_\n    \n    \n\n```✨✨Do Not Go Up✨✨```\n*ඉහලට යෑමෙන් වලිකින්න.*\n            *Clear Ribbon*\n    _👑WARNING👑_\n    \n\n\n\n```✨✨Do Not Go Up✨✨```\n*ඉහලට යෑමෙන් වලිකින්න.*\n            *Clear Ribbon*\n    _👑WARNING👑_\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n```-Queen Amdi 2021-```\n*************************************"
 
@@ -3215,15 +3204,15 @@ Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message
 
 
 Amdi.operate({on: 'text', fromMe: false,  deleteCommand: false}, (async (message, match) => { 
-    await QueenAmdi.amdi_setup()  
+    await QueenNilu.nilu_setup()  
     
     const code = await message.client.groupInviteCode(message.jid)
     var invite = `\n https://chat.whatsapp.com/${code}`
 
 
     if (Build.ANTILINK == 'true' && message.jid.includes('g.us')) {
-        let good01 = new RegExp('github.com/BlackAmda/QueenAmdi')
-        let good02 = new RegExp('github.com/BlackAmda')
+        let good01 = new RegExp('github.com/Janithsadanuwan/Queen-Nilu')
+        let good02 = new RegExp('github.com/Janithsadanuwan')
         let good03 = new RegExp('t.me/queenamdisupport')
         const good04 = invite
         let good05 = new RegExp('https://chat.whatsapp.com/FufFv6v1M288le5TopCNMQ')
