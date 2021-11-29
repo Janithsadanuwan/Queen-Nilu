@@ -25,20 +25,55 @@ Janithsadanuwan   <a href="https://github.com/janith12345sa/Janithsadanuwan">*Ab
 
 ----  
   
-  <p align="center">
+ <p align="center">
+  <a href="https://github.com/Janithsadanuwan/Queen-Nilu">
+    <img src="https://img.shields.io/docker/pulls/blackamda/queenamdi?style=flat-square&label=Docker+Pulls">
   </a>
-  <a href="https://github.com/janith12345sa/King-BOT">
+  <a href="https://github.com/Janithsadanuwan/Queen-Nilu">
+    <img src="https://img.shields.io/docker/image-size/blackamda/queenamdi?style=flat-square&label=Docker+Image+Size">
+  </a>
+</p>
+
+
+<p align="center">
+
+  <a href="https://github.com/Janithsadanuwan/Queen-Nilu">
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FJanithsadanuwan%2FQueen-Nilu&count_bg=%2379C83D&title_bg=%23555555&icon=gitpod.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false" alt="Views"/></a>
+  
+  </a>
+  <a href="https://github.com/Janithsadanuwan/Queen-Nilu/fork">
+    <img src="https://img.shields.io/github/forks/Janithsadanuwan/Queen-Nilu?label=Fork&style=social">
+    
+  </a>
+  <a href="https://github.com/Janithsadanuwan/Queen-Nilu/stargazers">
+    <img src="https://img.shields.io/github/stars/Janithsadanuwan/Queen-Nilu?style=social">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Janithsadanuwan/Queen-Nilu">
+    <img src="https://img.shields.io/github/repo-size/Janithsadanuwan/Queen-Nilu/?color=purple&label=Repo%20Size&style=plastic">
+
+  </a>
+  <a href="https://github.com/Janithsadanuwan/Queen-Nilu">
+    <img src="https://img.shields.io/github/license/Janithsadanuwan/Queen-Nilu?color=purple&label=License&style=plastic">
+
+  </a>
+  <a href="https://github.com/Janithsadanuwan/Queen-Nilu">
+    <img src="https://img.shields.io/github/languages/top/Janithsadanuwan/Queen-Nilu?color=purple&label=Javascript&style=plastic">
+
+  </a>
+  <a href="https://github.com/Janithsadanuwan/Queen-Nilu">
     <img src="https://img.shields.io/static/v1?label=Author&message=Janith%20sadanuwan&color=purple&style=plastic">
 
   </a>
   </p>
  <p align="center">
-  <a href="https://wa.me/94788175828">
-    <img src="https://img.shields.io/badge/Contact%20Me%20On%20Whatsapp-J%20S%20Bot-purple&style=plastic">
- 
+  <a href="https://wa.me/947881758">
+    <img src="https://img.shields.io/badge/Contact%20Me%20On%20Whatsapp-Queen%20NILU%20Bot-purple&style=plastic">
+
   </a>
 </p>
-
 ```
 Kingbot යනු WhatsApp සඳහා වන පරිශීලක බොට් එකක් වන අතර එමඟින් ඔබට බොහෝ කාර්යයන් ඉටු කිරීමට ඉඩ සලසයි.
 අනිසි ලෙස භාවිතා කිරීමේ සියලු ප්‍රතිවිපාක සඳහා පරිශීලකයා වගකිව යුතුය.
