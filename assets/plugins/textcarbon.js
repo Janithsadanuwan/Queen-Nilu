@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const queennilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 
 const {MessageType, MessageOptions, Mimetype} = require('@blackamda/queenamdi-web-api');
 const axios = require('axios');
@@ -30,8 +19,8 @@ const Lang = Language.getString('textcarbon');
 
 if (Build.WORKTYPE == 'private') {
 
-    Amdi.operate({pattern: 'carbon$', fromMe: true, desc: Lang.CARBON_DESC,  deleteCommand: false}, (async (message, match) => {
-        await QueenAmdi.amdi_setup()
+    Nilu.operate({pattern: 'carbon$', fromMe: true, desc: Lang.CARBON_DESC,  deleteCommand: false}, (async (message, match) => {
+        await QueenNilu.nilu_setup()
         if (!message.reply_message) return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
 
         var rgbafmin = 0; 
@@ -97,8 +86,8 @@ if (Build.WORKTYPE == 'private') {
 }
 else if (Build.WORKTYPE == 'public') {
 
-    Amdi.operate({pattern: 'carbon$', fromMe: false, desc: Lang.CARBON_DESC}, (async (message, match) => {
-        await QueenAmdi.amdi_setup()
+    Nilu.operate({pattern: 'carbon$', fromMe: false, desc: Lang.CARBON_DESC}, (async (message, match) => {
+        await QueenNilu.nilu_setup()
         if (!message.reply_message) return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
 
         var rgbafmin = 0; 
