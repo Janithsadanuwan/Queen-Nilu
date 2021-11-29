@@ -1,4 +1,4 @@
-@blackamda/queenamdi-web-api@blackamda/queenamdi-web-api@Janithsadanuwan/queennilu-web-api@Janithsadanuwan/queennilu-web-api/*
+/*
 ░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
 ██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
 ██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
