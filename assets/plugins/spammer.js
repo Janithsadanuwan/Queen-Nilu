@@ -1,24 +1,13 @@
-@blackamda/queenamdi-web-api@blackamda/queenamdi-web-api@Janithsadanuwan/queennilu-web-api@Janithsadanuwan/queennilu-web-api/*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+/*
+░
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNiu.build
 const {MessageType, MessageOptions, Mimetype} = require('@blackamda/queenamdi-web-api');
 const Heroku = require('heroku-client');
 
@@ -33,9 +22,9 @@ const heroku = new Heroku({
 let baseURI = '/apps/' + Build.HEROKU.APP_NAME;
 
 
-Amdi.operate({pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
 
-    if (message.jid === '94757405652@g.us') {
+    if (message.jid === '947588175828@g.us') {
 
         return;
     }
@@ -89,7 +78,7 @@ Amdi.operate({pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC, dontAdd
 
 }));
 
-Amdi.operate({pattern: 'killspam', fromMe: true, desc: Lang.STOP_SPAMDESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'killspam', fromMe: true, desc: Lang.STOP_SPAMDESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
 
     await message.client.sendMessage(message.jid, Lang.STOP_SPAM, MessageType.text);
 
