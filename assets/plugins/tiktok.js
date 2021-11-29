@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 // const tk = require('tiktok-scraper');
 const {MessageType,Mimetype} = require('@blackamda/queenamdi-web-api');
 const axios = require('axios');
@@ -29,8 +18,8 @@ const Lang = Language.getString('tiktok');
 let LOL = Build.WORKTYPE == 'public' ? false : true
 
 var TKDESC = ''
-if (Build.LANG == 'SI') TKDESC = '╔═══════❪💃🏻♥️❫\n\n▷ *Queen Amdi Tiktok Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nTiktok වර්ගය තෝරන්න :'
-if (Build.LANG == 'EN') TKDESC = '╔═══════❪💃🏻♥️❫\n\n▷ *Queen Amdi Tiktok Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nSelect the tiktok type :'
+if (Build.LANG == 'SI') TKDESC = '╔═══════❪💃🏻💙❫\n\n▷ *Queen Nilu Tiktok Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nTiktok වර්ගය තෝරන්න :'
+if (Build.LANG == 'EN') TKDESC = '╔═══════❪💃🏻💙❫\n\n▷ *Queen Nilu Tiktok Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nSelect the tiktok type :'
 
 var WMARK = ''
 if (Build.LANG == 'SI') WMARK = 'Tiktok සලකුණ සමඟ'
@@ -40,8 +29,8 @@ var WOMARK = ''
 if (Build.LANG == 'SI') WOMARK = 'Tiktok සලකුණ නොමැතිව'
 if (Build.LANG == 'EN') WOMARK = 'Without tiktok watermark'
 
-Amdi.operate({ pattern: 'tiktok ?(.*)', fromMe: LOL, desc: Lang.TIKTOK_DESC,  deleteCommand: false}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'tiktok ?(.*)', fromMe: LOL, desc: Lang.TIKTOK_DESC,  deleteCommand: false}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const tkurl = match[1]
 
     if (tkurl === '') return await message.client.sendMessage(message.jid,Lang.INVALID_TK, {quoted: message.data});
@@ -68,11 +57,11 @@ Amdi.operate({ pattern: 'tiktok ?(.*)', fromMe: LOL, desc: Lang.TIKTOK_DESC,  de
 }))
 
 
-Amdi.operate({ pattern: 'qatkwmark ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qatkwmark ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const tkurl = match[1]
 
-    const tiktok = await QueenAmdi.TiktokDownloader(tkurl)
+    const tiktok = await QueenNilu.TiktokDownloader(tkurl)
 
     var downloading = await message.client.sendMessage(message.jid,Lang.DLOAD_TK,MessageType.text, {quoted: message.data});
     const profileBuffer = await axios.get(tiktok.result.watermark, {responseType: 'arraybuffer'})
@@ -83,11 +72,11 @@ Amdi.operate({ pattern: 'qatkwmark ?(.*)', fromMe: LOL,  deleteCommand: false, d
     return await message.client.deleteMessage(message.jid, {id: uploading.key.id, remoteJid: message.jid, fromMe: true})
 }))
 
-Amdi.operate({ pattern: 'qatkwomark ?(.*)', fromMe: LOL, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qatkwomark ?(.*)', fromMe: LOL, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const tkurl = match[1]
 
-    const tiktok = await QueenAmdi.TiktokDownloader(tkurl)
+    const tiktok = await QueenNilu.TiktokDownloader(tkurl)
 
     var downloading = await message.client.sendMessage(message.jid,Lang.DLOAD_TK,MessageType.text, {quoted: message.data});
     const profileBuffer = await axios.get(tiktok.result.nowatermark, {responseType: 'arraybuffer'})
@@ -99,8 +88,8 @@ Amdi.operate({ pattern: 'qatkwomark ?(.*)', fromMe: LOL, deleteCommand: false, d
 }))
 
 /*
-Amdi.operate({ pattern: 'tk ?(.*)', fromMe: LOL, desc: Lang.TK_DESC,  deleteCommand: false}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'tk ?(.*)', fromMe: LOL, desc: Lang.TK_DESC,  deleteCommand: false}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const username = match[1]
     if (username === '') return await message.client.sendMessage(message.jid,Lang.REPLY, {quoted: message.data});
 
