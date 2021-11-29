@@ -9,12 +9,13 @@ const QueenNilu = require('queennilu-public');
 const nilu = QueenNilu.events
 const Build = QueenNilu.build
 const _amdi = QueenNilu.panel
-const {MessageType} = require(@blackamda/queenamdi-web-apiconst fs = require("fs")
+const {MessageType} = require(@blackamda/queenamdi-web-api');
+const fs = require("fs")                             
 const nilu = fs.readFileSync('./node_modules/queennilu-public/media/nilubot.mp3')  
 let LOL = Build.WORKTYPE == 'public' ? false : true
 
 const Language = require('../language');
-const Lang = Language.getString('_amdi');
+const Lang = Language.getString('_nilu');
 const stats = Language.getString('system_stats')
 
 Nilu.operate({pattern: Build.MENU, fromMe: LOL, dontAddCommandList: true, deleteCommand: false,}, (async (message, match) => {
