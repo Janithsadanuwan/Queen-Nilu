@@ -1,6 +1,6 @@
 /*
 
-Copyright (C) 2021 Black Amda.
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
@@ -11,14 +11,14 @@ const Build = QueenNilu.build
 const _amdi = QueenNilu.panel
 const {MessageType} = require('@blackamda/queenamdi-web-api');
 const fs = require("fs")
-const nilu = fs.readFileSync('./node_modules/queenamdi-public/media/amdibot.mp3')  
+const nilu = fs.readFileSync('./node_modules/queennilu-public/media/nilubot.mp3')  
 let LOL = Build.WORKTYPE == 'public' ? false : true
 
 const Language = require('../language');
 const Lang = Language.getString('_amdi');
 const stats = Language.getString('system_stats')
 
-Amdi.operate({pattern: Build.MENU, fromMe: LOL, dontAddCommandList: true, deleteCommand: false,}, (async (message, match) => {
+Nilu.operate({pattern: Build.MENU, fromMe: LOL, dontAddCommandList: true, deleteCommand: false,}, (async (message, match) => {
     await QueenNilu.nilu_setup()
 
     const ver = stats.version
