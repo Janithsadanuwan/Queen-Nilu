@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Build = QueenAmdi.build
-const Amdi = QueenAmdi.events
+const QueenNilu = require('queennilu-public');
+const Build = QueenNilu.build
+const Nilu = QueenNilu.events
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const {MessageType} = require('@blackamda/queenamdi-web-api');
@@ -30,8 +19,8 @@ const Language = require('../language');
 const Lang = Language.getString('updater');
 
 
-Amdi.operate({pattern: 'update$', fromMe: true, desc: Lang.UPDATER_DESC, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'update$', fromMe: true, desc: Lang.UPDATER_DESC, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     await git.fetch();
     var commits = await git.log([Build.BRANCH + '..origin/' + Build.BRANCH]);
     if (commits.total === 0) {
@@ -68,10 +57,10 @@ Amdi.operate({pattern: 'update$', fromMe: true, desc: Lang.UPDATER_DESC, dontAdd
 }));
 
 var Action = ''
-if (Build.LANG == 'SI') Action = '*👸🏻 Queen Amdi Updating...*'
-if (Build.LANG == 'EN') Action = '*👸🏻 Queen Amdi Updating...*'
-Amdi.operate({pattern: 'update now', fromMe: true, desc: Lang.UPDATE_NOW_DESC, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+if (Build.LANG == 'SI') Action = '*💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙 Updating...*'
+if (Build.LANG == 'EN') Action = '*💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙 Updating...*'
+Nilu.operate({pattern: 'update now', fromMe: true, desc: Lang.UPDATE_NOW_DESC, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     await git.fetch();
     var commits = await git.log([Build.BRANCH + '..origin/' + Build.BRANCH]);
     if (commits.total === 0) {
