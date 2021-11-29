@@ -1,6 +1,6 @@
 # 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙💃 *whatsapp bot©*
 
-Janithsadanuwan   <a href="https://gist.github.com/Janithsadanuwan/45e5ea152dbe490876972662867ea3e5">
+Janithsadanuwan   <a href="https://github.com/Janithsadanuwan/Janith-Sadanuwan">
     <img src="https://img.shields.io/badge/About%20Me-purple&style=plastic">
 
   </a>
