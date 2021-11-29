@@ -1,27 +1,16 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu= require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 const {MessageType} = require('@blackamda/queenamdi-web-api');
 const Heroku = require('heroku-client');
-const queenamdiUploader = require("queenamdi-img");
+const queenniluUploader = require("queennilu-img");
 const fs = require('fs');
 const Language = require('../language');
 const Lang = Language.getString('profile');
@@ -30,7 +19,7 @@ const heroku = new Heroku({
 });
 let baseURI = '/apps/' + Build.HEROKU.APP_NAME;
 
-Amdi.operate({pattern: 'kickme', fromMe: true, desc: Lang.KICKME_DESC, onlyGroup: true, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+Nilu.operate({pattern: 'kickme', fromMe: true, desc: Lang.KICKME_DESC, onlyGroup: true, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
     if (Build.KICKMEMSG == 'default') { 
         await message.client.sendMessage(message.jid,Lang.KICKME,MessageType.text);
         await message.client.groupLeave(message.jid);
@@ -41,7 +30,7 @@ Amdi.operate({pattern: 'kickme', fromMe: true, desc: Lang.KICKME_DESC, onlyGroup
     }
 }));
 
-Amdi.operate({pattern: 'pp', fromMe: true, desc: Lang.PP_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
+Nilu.operate({pattern: 'pp', fromMe: true, desc: Lang.PP_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
     if (message.reply_message === false || message.reply_message.image === false) return await message.client.sendMessage(message.jid,Lang.NEED_PHOTO);
     
     var load = await message.client.sendMessage(message.jid,Lang.PPING,MessageType.text);
@@ -57,7 +46,7 @@ Amdi.operate({pattern: 'pp', fromMe: true, desc: Lang.PP_DESC, dontAddCommandLis
     await load.delete();
 }));
 
-Amdi.operate({pattern: 'block ?(.*)', fromMe: true, desc: Lang.BLOCK_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {   
+Nilu.operate({pattern: 'block ?(.*)', fromMe: true, desc: Lang.BLOCK_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {   
     if (Build.BLOCKMSG == 'default') {  
         if (message.reply_message !== false) {
             await message.client.sendMessage(message.jid, '@' + message.reply_message.jid.split('@')[0] + '```, ' + Lang.BLOCKED + '!```', MessageType.text, {
@@ -100,7 +89,7 @@ Amdi.operate({pattern: 'block ?(.*)', fromMe: true, desc: Lang.BLOCK_DESC, dontA
     }
 }));
 
-Amdi.operate({pattern: 'unblock ?(.*)', fromMe: true, desc: Lang.UNBLOCK_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
+Nilu.operate({pattern: 'unblock ?(.*)', fromMe: true, desc: Lang.UNBLOCK_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
     if (message.reply_message !== false) {
         await message.client.blockUser(message.reply_message.jid, "remove");
         await message.client.sendMessage(message.jid, '@' + message.reply_message.jid.split('@')[0] + '```, ' + Lang.UNBLOCKED + '!```', MessageType.text, {
@@ -122,7 +111,7 @@ Amdi.operate({pattern: 'unblock ?(.*)', fromMe: true, desc: Lang.UNBLOCK_DESC, d
 }));
 
 
-    Amdi.operate({pattern: 'jid ?(.*)', fromMe: true, desc: Lang.JID_DESC,  deleteCommand: false}, (async (message, match) => {    
+    Nilu.operate({pattern: 'jid ?(.*)', fromMe: true, desc: Lang.JID_DESC,  deleteCommand: false}, (async (message, match) => {    
         if (message.reply_message !== false) {
             await message.client.sendMessage(message.jid, Lang.JID.format(message.reply_message.jid.split('@')[0], message.reply_message.jid), MessageType.text, {
                 quotedMessage: message.reply_message.data, contextInfo: {mentionedJid: [message.reply_message.jid.replace('c.us', 's.whatsapp.net')]}
@@ -139,7 +128,7 @@ Amdi.operate({pattern: 'unblock ?(.*)', fromMe: true, desc: Lang.UNBLOCK_DESC, d
     }));
 
 
-Amdi.operate({pattern: 'setalive', fromMe: true, desc: Lang.ALIVE_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
+Nilu.operate({pattern: 'setalive', fromMe: true, desc: Lang.ALIVE_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
     if (message.reply_message === false || message.reply_message.image === false) return await message.client.sendMessage(message.jid,Lang.NEED_PHOTO);
     
     var location = await message.client.downloadAndSaveMediaMessage({
@@ -149,7 +138,7 @@ Amdi.operate({pattern: 'setalive', fromMe: true, desc: Lang.ALIVE_DESC, dontAddC
         },
         message: message.reply_message.data.quotedMessage
     });
-    const anu = await queenamdiUploader(Build.IMGBB, location)
+    const anu = await queenniluUploader(Build.IMGBB, location)
     const varKey = "ALIVE_LOGO"
     const varValue = anu.display_url
     await heroku.patch(baseURI + '/config-vars', {
@@ -161,7 +150,7 @@ Amdi.operate({pattern: 'setalive', fromMe: true, desc: Lang.ALIVE_DESC, dontAddC
     });
 }));
 
-Amdi.operate({pattern: 'setwelcome', fromMe: true, desc: Lang.WEL_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
+Nilu.operate({pattern: 'setwelcome', fromMe: true, desc: Lang.WEL_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
     if (message.reply_message === false || message.reply_message.image === false) return await message.client.sendMessage(message.jid,Lang.NEED_PHOTO);
     
     var location = await message.client.downloadAndSaveMediaMessage({
@@ -171,7 +160,7 @@ Amdi.operate({pattern: 'setwelcome', fromMe: true, desc: Lang.WEL_DESC, dontAddC
         },
         message: message.reply_message.data.quotedMessage
     });
-    const anu = await queenamdiUploader(Build.IMGBB, location)
+    const anu = await queenniluUploader(Build.IMGBB, location)
     const varKey = "WELCOME_LOGO"
     const varValue = anu.display_url
     await heroku.patch(baseURI + '/config-vars', {
@@ -183,7 +172,7 @@ Amdi.operate({pattern: 'setwelcome', fromMe: true, desc: Lang.WEL_DESC, dontAddC
     });
 }));
 
-Amdi.operate({pattern: 'setbye', fromMe: true, desc: Lang.BYE_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
+Nilu.operate({pattern: 'setbye', fromMe: true, desc: Lang.BYE_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {    
     if (message.reply_message === false || message.reply_message.image === false) return await message.client.sendMessage(message.jid,Lang.NEED_PHOTO);
     
     var location = await message.client.downloadAndSaveMediaMessage({
@@ -193,7 +182,7 @@ Amdi.operate({pattern: 'setbye', fromMe: true, desc: Lang.BYE_DESC, dontAddComma
         },
         message: message.reply_message.data.quotedMessage
     });
-    const anu = await queenamdiUploader(Build.IMGBB, location)
+    const anu = await queenniluUploader(Build.IMGBB, location)
     const varKey = "BYE_LOGO"
     const varValue = anu.display_url
     await heroku.patch(baseURI + '/config-vars', {
