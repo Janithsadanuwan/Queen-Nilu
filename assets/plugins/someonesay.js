@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 
 const { MessageType, MessageOptions, Mimetype } = require('@blackamda/queenamdi-web-api');
 const fs = require('fs');
@@ -26,8 +15,8 @@ const axios = require('axios');
 let LOL = Build.WORKTYPE == 'public' ? false : true
 
 var LISTDESC = ''
-if (Build.LANG == 'SI') LISTDESC = '╔═══════❪💃🏻♥️❫\n▷ *💬 Someone says list* ◁\n╚═════≪ •❈• ≫═════'
-if (Build.LANG == 'EN') LISTDESC = '╔═══════❪💃🏻♥️❫\n▷ *💬 Someone says list* ◁\n╚═════≪ •❈• ≫═════'
+if (Build.LANG == 'SI') LISTDESC = '╔═══════❪💃🏻💙❫\n▷ *💬 Someone says list* ◁\n╚═════≪ •❈• ≫═════'
+if (Build.LANG == 'EN') LISTDESC = '╔═══════❪💃🏻💙❫\n▷ *💬 Someone says list* ◁\n╚═════≪ •❈• ≫═════'
 
 var SELECT = ''
 if (Build.LANG == 'SI') SELECT = 'කවුරුහරි තෝරන්න'
@@ -58,8 +47,8 @@ if (Build.LANG == 'SI') NEED_WORD = '*ඔබ වචන ඇතුළත් කළ
 if (Build.LANG == 'EN') NEED_WORD = '*Please enter words!*'
 
 
-Amdi.operate({pattern: 'someonesay ?(.*)', fromMe: LOL, desc: DESC, dontAddCommandList: false, deleteCommand: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'someonesay ?(.*)', fromMe: LOL, desc: DESC, dontAddCommandList: false, deleteCommand: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const txt = match[1]
     
     if (txt === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text, {quoted: message.data});
@@ -79,7 +68,7 @@ Amdi.operate({pattern: 'someonesay ?(.*)', fromMe: LOL, desc: DESC, dontAddComma
     ]
 
     const website = [
-        {title: 'https://amdaniwasa.com/', description: "", rowId:"web"}]
+        {title: 'https://janithsadanuwan.blogspot.com/', description: "", rowId:"web"}]
        
     const sections = [{title: "Someone says List", rows: rows}, {title: "Check official website :", rows: website}]
        
@@ -94,8 +83,8 @@ Amdi.operate({pattern: 'someonesay ?(.*)', fromMe: LOL, desc: DESC, dontAddComma
 }));
 
 
-Amdi.operate({ pattern: 'qaanimesay ?(.*)', fromMe: LOL, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qaanimesay ?(.*)', fromMe: LOL, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD,MessageType.text, {quoted: message.data});
 
     var ttinullimage = await axios.get(`https://nekobot.xyz/api/imagegen?type=kannagen&text=${match[1].replace(/Ö/g, "%C3%96").replace(/ö/g, "%C3%B6").replace(/ü/g, "%C3%BC").replace(/Ü/g, "%C3%9C").replace(/Ğ/g, "%C4%9E").replace(/ğ/g, "%C4%9F").replace(/ş/g, "%C5%9F").replace(/Ş/g, "%C5%9E").replace(/ç/g, "%C3%A7").replace(/Ç/g, "%C3%87").replace(/ı/g, "%C4%B1").replace(/i/g, "%69").replace(/"/g, "%22").replace(/İ/g, "%C4%B0")}&raw=1`, { responseType: 'arraybuffer' })
@@ -105,8 +94,8 @@ Amdi.operate({ pattern: 'qaanimesay ?(.*)', fromMe: LOL, deleteCommand: false, d
 }));
 
 
-Amdi.operate({ pattern: 'qachangesay ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qachangesay ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD,MessageType.text, {quoted: message.data});
 
     var ttinullimage = await axios.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${match[1].replace(/Ö/g, "%C3%96").replace(/ö/g, "%C3%B6").replace(/ü/g, "%C3%BC").replace(/Ü/g, "%C3%9C").replace(/Ğ/g, "%C4%9E").replace(/ğ/g, "%C4%9F").replace(/ş/g, "%C5%9F").replace(/Ş/g, "%C5%9E").replace(/ç/g, "%C3%A7").replace(/Ç/g, "%C3%87").replace(/ı/g, "%C4%B1").replace(/i/g, "%69").replace(/"/g, "%22").replace(/İ/g, "%C4%B0")}&raw=1`, { responseType: 'arraybuffer' })
@@ -116,8 +105,8 @@ Amdi.operate({ pattern: 'qachangesay ?(.*)', fromMe: LOL,  deleteCommand: false,
 }));
 
 
-Amdi.operate({ pattern: 'qatrumpsay ?(.*)', fromMe: LOL, deleteCommand: false, dontAddCommandList: true }, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qatrumpsay ?(.*)', fromMe: LOL, deleteCommand: false, dontAddCommandList: true }, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD,MessageType.text, {quoted: message.data});
 
     var ttinullimage = await axios.get(`https://nekobot.xyz/api/imagegen?type=trumptweet&text=${match[1].replace(/Ö/g, "%C3%96").replace(/ö/g, "%C3%B6").replace(/ü/g, "%C3%BC").replace(/Ü/g, "%C3%9C").replace(/Ğ/g, "%C4%9E").replace(/ğ/g, "%C4%9F").replace(/ş/g, "%C5%9F").replace(/Ş/g, "%C5%9E").replace(/ç/g, "%C3%A7").replace(/Ç/g, "%C3%87").replace(/ı/g, "%C4%B1").replace(/i/g, "%69").replace(/"/g, "%22").replace(/İ/g, "%C4%B0")}&raw=1`, { responseType: 'arraybuffer' })
@@ -126,8 +115,8 @@ Amdi.operate({ pattern: 'qatrumpsay ?(.*)', fromMe: LOL, deleteCommand: false, d
 
 }));
 
-Amdi.operate({ pattern: 'qagotasay ?(.*)', fromMe: LOL, deleteCommand: false, dontAddCommandList: true }, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qagotasay ?(.*)', fromMe: LOL, deleteCommand: false, dontAddCommandList: true }, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD,MessageType.text, {quoted: message.data});
 
     var ttinullimage = await axios.get(`https://nekobot.xyz/api/imagegen?type=tweet&username=Gotabaya%20Rajapaksha&text=${match[1].replace(/Ö/g, "%C3%96").replace(/ö/g, "%C3%B6").replace(/ü/g, "%C3%BC").replace(/Ü/g, "%C3%9C").replace(/Ğ/g, "%C4%9E").replace(/ğ/g, "%C4%9F").replace(/ş/g, "%C5%9F").replace(/Ş/g, "%C5%9E").replace(/ç/g, "%C3%A7").replace(/Ç/g, "%C3%87").replace(/ı/g, "%C4%B1").replace(/i/g, "%69").replace(/"/g, "%22").replace(/İ/g, "%C4%B0")}&raw=1`, { responseType: 'arraybuffer' })
