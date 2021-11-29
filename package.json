@@ -1,5 +1,5 @@
 {
-    "name": "Queen-Nilu",
+    "name": "QueenNilu",
     "version": "3.5.0v",
     "description": "Queen-Nilu Bot project - a Whatsapp userbot helping to improve your Whatsapp experience.",
     "main": "./Queen-Nilu/assets/module.js",
