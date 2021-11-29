@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 
 const {MessageType, Mimetype} = require('@blackamda/queenamdi-web-api');
 const fs = require('fs');
@@ -74,7 +63,7 @@ function webp2mp4File(path) {
                 const result = 'https:' + $('div#output > p.outfile > video > source').attr('src')
                 resolve({
                     status: true,
-                    message: "Queen Amdi",
+                    message: "Queen Nilu",
                     result: result
                 })
             }).catch(reject)
@@ -84,8 +73,8 @@ function webp2mp4File(path) {
 // End
 
 
-Amdi.operate({pattern: 'sticker$', fromMe: LOL, desc: Lang.STICKER_DESC,  deleteCommand: false}, (async (message, match) => {    
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'sticker$', fromMe: LOL, desc: Lang.STICKER_DESC,  deleteCommand: false}, (async (message, match) => {    
+    await QueenNilu.nilu_setup()
     if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text, {quoted: message.data});
     var downloading = await message.client.sendMessage(message.jid,Lang.DOWNLOADING,MessageType.text, {quoted: message.data});
     var location = await message.client.downloadAndSaveMediaMessage({
@@ -117,8 +106,8 @@ Amdi.operate({pattern: 'sticker$', fromMe: LOL, desc: Lang.STICKER_DESC,  delete
 }));
 
 
-Amdi.operate({pattern: 'sticvid$', fromMe: LOL, desc: Lang.ANI_STICK,  deleteCommand: false}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'sticvid$', fromMe: LOL, desc: Lang.ANI_STICK,  deleteCommand: false}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const msgid = message.jid
         if (message.reply_message === false) return await message.client.sendMessage(msgid, Lang.ANI_REPLY, MessageType.text, {quoted: message.data})
         var downloading = await message.client.sendMessage(msgid, Lang.ANIMATE, MessageType.text, {quoted: message.data})
@@ -131,11 +120,11 @@ Amdi.operate({pattern: 'sticvid$', fromMe: LOL, desc: Lang.ANI_STICK,  deleteCom
     });
     await webp2mp4File(savedFilename).then(async (rest) => {
         await axios({ method: "GET", url: rest.result, responseType: "stream"}).then(({ data }) => {
-            const saving = data.pipe(fs.createWriteStream('/root/QueenAmdi/vstic.mp4')) //OI OI MEKA WENAS KRAN ROOT
+            const saving = data.pipe(fs.createWriteStream('/root/Queen-Nilu/vstic.mp4')) //OI OI MEKA WENAS KRAN ROOT
             saving.on("finish", async () => {
-                await message.client.sendMessage(msgid, fs.readFileSync('/root/QueenAmdi/vstic.mp4'), MessageType.video, { mimetype: Mimetype.mp4, caption: Build.CAP, quoted: message.data , thumbnail: qathmub })
+                await message.client.sendMessage(msgid, fs.readFileSync('/root/Queen-Niluvstic.mp4'), MessageType.video, { mimetype: Mimetype.mp4, caption: Build.CAP, quoted: message.data , thumbnail: qathmub })
                 if (fs.existsSync(savedFilename)) fs.unlinkSync(savedFilename)
-                if (fs.existsSync('/root/QueenAmdi/vstic.mp4')) fs.unlinkSync('/root/QueenAmdi/vstic.mp4')
+                if (fs.existsSync('/root/Queen-Niluvstic.mp4')) fs.unlinkSync('/root/Queen-Nilu/vstic.mp4')
             })
         })
     })
