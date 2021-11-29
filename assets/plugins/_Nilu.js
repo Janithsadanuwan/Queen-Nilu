@@ -9,7 +9,7 @@ const QueenNilu = require('queennilu-public');
 const nilu = QueenNilu.events
 const Build = QueenNilu.build
 const _amdi = QueenNilu.panel
-const {MessageType} = require(@blackamda/queenamdi-web-api');
+const {MessageType} = require('@blackamda/queenamdi-web-api');
 const fs = require("fs")                             
 const nilu = fs.readFileSync('./node_modules/queennilu-public/media/nilubot.mp3')  
 let LOL = Build.WORKTYPE == 'public' ? false : true
