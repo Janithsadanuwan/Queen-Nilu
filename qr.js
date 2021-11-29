@@ -16,4 +16,4 @@ async function QueenNilu() {
 	await conn.connect();
 }
 
-QueenAmdi();
+QueenNilu();
