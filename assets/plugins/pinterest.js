@@ -1,25 +1,14 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
-const search = QueenAmdi.pin
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNiluNilu.build
+const search = QueenNilu.pin
 const axios = require('axios');
 const {MessageType, Mimetype} = require('@blackamda/queenamdi-web-api');
 let LOL = Build.WORKTYPE == 'public' ? false : true
@@ -28,7 +17,7 @@ const Language = require('../language');
 const Lang = Language.getString('pinterest');
 
 
-Amdi.operate({pattern: 'pint ?(.*)', fromMe: LOL, desc: Lang.PIN_DESC, dontAddCommandList: true}, (async (message, match) => {
+Nilu.operate({pattern: 'pint ?(.*)', fromMe: LOL, desc: Lang.PIN_DESC, dontAddCommandList: true}, (async (message, match) => {
     const query = match[1]
 
     if (query == '') return await message.client.sendMessage(message.jid, Lang.NEED_WORDS, MessageType.text, {quoted: message.data});
