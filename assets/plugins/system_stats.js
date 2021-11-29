@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 const {MessageType, MessageOptions, Mimetype} = require('@blackamda/queenamdi-web-api');
 const {spawnSync} = require('child_process');
 const chalk = require('chalk');
@@ -34,16 +23,16 @@ if (Build.LANG == 'SI') SYSDTXT = '💻 පද්ධති තත්ත්වය
 if (Build.LANG == 'EN') SYSDTXT = '💻 System status'
 
 var VER = ''
-if (Build.LANG == 'SI') VER = '🧬 Version'
-if (Build.LANG == 'EN') VER = '🧬 Version'
+if (Build.LANG == 'SI') VER = '🚀 Version'
+if (Build.LANG == 'EN') VER = '🚀 Version'
 
 var MSG = ''
-if (Build.ALIVEMSG == 'default') MSG = '```Hey There! Bot Online now. 💃🏻♥️```\n\n*Developer:* ```Black Amda```\n\n*Official Website:* https://amdaniwasa.com\n\n*Youtube channel :* https://www.youtube.com/channel/UCZx8U1EU95-Wn9mH4dn15vQ\n\n```Thank You For Using Queen Amdi💞```'
+if (Build.ALIVEMSG == 'default') MSG = '```Hey There!💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙 Bot Online now. ```\n\n*Developer:* ```Janith Sadanuwan```\n\n*Youtube channel :* https://www.youtube.com/c/janithsadanuwan\n\n```Thank You For Using 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙```'
 else MSG = Build.ALIVEMSG
 
 
-Amdi.operate({pattern: 'alive', fromMe: LOL, desc: Lang.ALIVE_DESC,  deleteCommand: false}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'alive', fromMe: LOL, desc: Lang.ALIVE_DESC,  deleteCommand: false}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     var logo = await axios.get (Build.ALIVE_LOGO, {responseType: 'arraybuffer'})
     var PIC = Buffer.from(logo.data)
 
@@ -62,7 +51,7 @@ Amdi.operate({pattern: 'alive', fromMe: LOL, desc: Lang.ALIVE_DESC,  deleteComma
     ]
     const buttonMessage = {
         contentText: MSG,
-        footerText: 'ǫᴜᴇᴇɴ ᴀᴍᴅɪ © ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ',
+        footerText: 'ǫᴜᴇᴇɴ ɴɪʟᴜ © ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ',
         buttons: buttons,
         headerType: 4,
         imageMessage: media.message.imageMessage    
@@ -81,10 +70,10 @@ Amdi.operate({pattern: 'qasysstats', fromMe: LOL, desc: Lang.SYSD_DESC, dontAddC
 Amdi.operate({pattern: 'qaversion', fromMe: LOL, desc: Lang.BOT_V, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
     await QueenAmdi.amdi_setup()
     await message.client.sendMessage(message.jid, 
-        `*🧬 Queen Amdi Version 🧬*\n\n` + 
+        `*🚀 ǫᴜᴇᴇɴ ɴɪʟᴜ Version 🚀*\n\n` + 
         '```Installed version :```\n' +
         Lang.version + 
-        `\n\nCheck official website : https://amdaniwasa.com/`
+        `\n\nCheck official youtube chanel : www.youtube.com/c/janithsadanuwan`
    , MessageType.text, {quoted: message.data});
     
 }));
