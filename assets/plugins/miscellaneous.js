@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 const tesseract = require("node-tesseract-ocr")
 const langs = require('langs');
 const {MessageType,Mimetype} = require('@blackamda/queenamdi-web-api');
@@ -39,7 +28,7 @@ let LOL = Build.WORKTYPE == 'public' ? false : true
 
 
 
-Amdi.operate({pattern: 'insta ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.IGSTALK}, (async (message, match) => {
+Nilu.operate({pattern: 'insta ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.IGSTALK}, (async (message, match) => {
 
     const username = match[1]
 
@@ -66,7 +55,7 @@ Amdi.operate({pattern: 'insta ?(.*)', fromMe: LOL,  deleteCommand: false, desc: 
     })
 }));
 
-Amdi.operate({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, usage: Lang.TRANSLATE_USAGE, fromMe: LOL}, (async (message, match) => {
+Nilu.operate({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, usage: Lang.TRANSLATE_USAGE, fromMe: LOL}, (async (message, match) => {
 
     if (!message.reply_message) {
             return await message.client.sendMessage(message.jid,Lang.NEED_REPLY,MessageType.text,{quoted: message.data});
@@ -82,7 +71,7 @@ Amdi.operate({pattern: 'trt(?: |$)(\\S*) ?(\\S*)', desc: Lang.TRANSLATE_DESC, us
     }
 }));
 
-Amdi.operate({pattern: 'tts (.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.TTS_DESC}, (async (message, match) => {
+Nilu.operate({pattern: 'tts (.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.TTS_DESC}, (async (message, match) => {
 
     if(match[1] === undefined || match[1] == "")
         return;
@@ -107,9 +96,7 @@ Amdi.operate({pattern: 'tts (.*)', fromMe: LOL,  deleteCommand: false, desc: Lan
     });
     await message.client.sendMessage(message.jid,buffer, MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true});
 }));
-
-
-Amdi.operate({pattern: 'wiki ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WIKI_DESC}, (async (message, match) => { 
+Nilu.operate({pattern: 'wiki ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WIKI_DESC}, (async (message, match) => { 
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text,{quoted: message.data});    
     var reply = await message.client.sendMessage(message.jid,Lang.SEARCHING,MessageType.text,{quoted: message.data});
@@ -123,7 +110,7 @@ Amdi.operate({pattern: 'wiki ?(.*)', fromMe: LOL,  deleteCommand: false, desc: L
 
 }));
 
-Amdi.operate({pattern: 'quote ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.QUOTE_DESC}, async (message, match) => {
+Nilu.operate({pattern: 'quote ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.QUOTE_DESC}, async (message, match) => {
         
     if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
     const url = `https://api.quotable.io/random`;
@@ -138,7 +125,7 @@ Amdi.operate({pattern: 'quote ?(.*)', fromMe: LOL,  deleteCommand: false, desc: 
 });
 
 
-Amdi.operate({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WAME_DESC}, (async (message, match) => {    
+Nilu.operate({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WAME_DESC}, (async (message, match) => {    
     if (message.reply_message !== false) {
         await message.client.sendMessage(message.jid, Lang.WAME.format(message.reply_message.jid.split('@')[0], message.reply_message.jid.replace('@s.whatsapp.net', ' ')), MessageType.text, {
                 quotedMessage: message.reply_message.data, contextInfo: {mentionedJid: [message.reply_message.jid.replace('c.us', 's.whatsapp.net')]}
@@ -154,8 +141,8 @@ Amdi.operate({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: L
     }
 }));
 
-Amdi.operate({pattern: 'ss ?(.*)', fromMe: LOL, desc: Lang.SS_DESC,  deleteCommand: false}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'ss ?(.*)', fromMe: LOL, desc: Lang.SS_DESC,  deleteCommand: false}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     if (match[1] === '') return await message.sendMessage(Lang.LİNK);
 
     var webimage = await axios.get(`https://shot.screenshotapi.net/screenshot?&full_page=true&url=${match[1]}&fresh=true&output=image&file_type=png&dark_mode=true&wait_for_event=load&delay=2000`, { responseType: 'arraybuffer' })
@@ -164,7 +151,7 @@ Amdi.operate({pattern: 'ss ?(.*)', fromMe: LOL, desc: Lang.SS_DESC,  deleteComma
 
 }));
 
-Amdi.operate({pattern: 'mp4audio', fromMe: LOL,  deleteCommand: false, desc: Lang.MP4TOAUDİO_DESC}, (async (message, match) => {    
+Nilu.operate({pattern: 'mp4audio', fromMe: LOL,  deleteCommand: false, desc: Lang.MP4TOAUDİO_DESC}, (async (message, match) => {    
 
     if (message.reply_message === false) return await message.client.sendMessage(message.jid, Lang.MP4TOAUDİO_NEEDREPLY, MessageType.text, {quoted: message.data});
     var downloading = await message.client.sendMessage(message.jid,Lang.MP4TOAUDİO,MessageType.text, {quoted: message.data});
@@ -186,7 +173,7 @@ Amdi.operate({pattern: 'mp4audio', fromMe: LOL,  deleteCommand: false, desc: Lan
 }));
 
 
-Amdi.operate({pattern: 'imagesticker', fromMe: LOL,  deleteCommand: false, desc: Lang.STİCKER_DESC}, (async (message, match) => {   
+Nilu.operate({pattern: 'imagesticker', fromMe: LOL,  deleteCommand: false, desc: Lang.STİCKER_DESC}, (async (message, match) => {   
  
     if (message.reply_message === false) return await message.client.sendMessage(message.jid, Lang.STİCKER_NEEDREPLY, MessageType.text, {quoted: message.data});
     var downloading = await message.client.sendMessage(message.jid,Lang.STİCKER,MessageType.text, {quoted: message.data});
@@ -207,7 +194,7 @@ Amdi.operate({pattern: 'imagesticker', fromMe: LOL,  deleteCommand: false, desc:
     return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 }));
 
-Amdi.operate({pattern: 'img ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.IMG_DESC}, (async (message, match) => { 
+Nilu.operate({pattern: 'img ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.IMG_DESC}, (async (message, match) => { 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text, {quoted: message.data});
 
     if (Build.ANTIBAD == 'true') {
@@ -284,7 +271,7 @@ Amdi.operate({pattern: 'img ?(.*)', fromMe: LOL,  deleteCommand: false, desc: La
     }
 }));
 
-Amdi.operate({pattern: 'ocr', fromMe: LOL,  deleteCommand: false, desc: Lang.OCR_DESC}, (async (message, match) => { 
+Nilu.operate({pattern: 'ocr', fromMe: LOL,  deleteCommand: false, desc: Lang.OCR_DESC}, (async (message, match) => { 
     if (message.reply_message === false) return await message.client.sendMessage(message.jid, Lang.NEED_IMG, MessageType.text, {quoted: message.data});
 
     var downloading = await message.client.sendMessage(message.jid,Lang.SCANNING,MessageType.text, {quoted: message.data});
