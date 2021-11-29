@@ -1,24 +1,13 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const QueenNilu = QueenNilu.events
+const Build = QueenNilu.build
 
 const {MessageType, Mimetype} = require('@blackamda/queenamdi-web-api');
 const memeMaker = require('meme-maker')
@@ -29,8 +18,8 @@ const Lang = Language.getString('memes');
 let LOL = Build.WORKTYPE == 'public' ? false : true
 
 
-Amdi.operate({pattern: 'meme ?(.*)', fromMe: LOL, desc: Lang.MEMES_DESC,  deleteCommand: false}, (async (message, match) => {   
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'meme ?(.*)', fromMe: LOL, desc: Lang.MEMES_DESC,  deleteCommand: false}, (async (message, match) => {   
+    await QueenNilu.nilu_setup()
     if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text, {quoted: message.data});
     var topText, bottomText;
     if (match[1].includes(';')) {
