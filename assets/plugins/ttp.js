@@ -1,24 +1,13 @@
-@blackamda/queenamdi-web-api@blackamda/queenamdi-web-api@Janithsadanuwan/queennilu-web-api@Janithsadanuwan/queennilu-web-api/*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+/*
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 const { MessageType, MessageOptions, Mimetype } = require('@blackamda/queenamdi-web-api');
 const fs = require("fs")
 const axios = require('axios');
@@ -30,8 +19,8 @@ let LOL = Build.WORKTYPE == 'public' ? false : true
 
 
 var LISTDESC = ''
-if (Build.LANG == 'SI') LISTDESC = '╔═══════❪💃🏻♥️❫\n\n▷ *💠🧩 විවිධ TTP ලැයිස්තුව 🧩💠* ◁\n\n╚═════≪ •❈• ≫═════'
-if (Build.LANG == 'EN') LISTDESC = '╔═══════❪💃🏻♥️❫\n\n▷ *💠🧩 Custom TTP List 🧩💠* ◁\n\n╚═════≪ •❈• ≫═════'
+if (Build.LANG == 'SI') LISTDESC = '╔═══════❪💃🏻💙❫\n\n▷ *💠🧩 විවිධ TTP ලැයිස්තුව 🧩💠* ◁\n\n╚═════≪ •❈• ≫═════'
+if (Build.LANG == 'EN') LISTDESC = '╔═══════❪💃🏻💙\n\n▷ *💠🧩 Custom TTP List 🧩💠* ◁\n\n╚═════≪ •❈• ≫═════'
 
 var NEED_WORD = ''
 if (Build.LANG == 'SI') NEED_WORD = '*ඔබ වචන ඇතුළත් කළ යුතුය!*'
@@ -82,8 +71,8 @@ if (Build.LANG == 'SI') TTP9 = 'සජීවිකරණය කළ රතු tex
 if (Build.LANG == 'EN') TTP9 = 'Animated red text sticker. [Sinhala font supported]'
 
 
-Amdi.operate({pattern: 'ttp ?(.*)', fromMe: LOL, desc: TTP_DESC, dontAddCommandList: false, deleteCommand: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'ttp ?(.*)', fromMe: LOL, desc: TTP_DESC, dontAddCommandList: false, deleteCommand: true}, (async (message, match) => {
+  await QueenNilu.nilu_setup()
     const txt = match[1]
 
     var BUTTHANDLE = '';
@@ -108,7 +97,7 @@ Amdi.operate({pattern: 'ttp ?(.*)', fromMe: LOL, desc: TTP_DESC, dontAddCommandL
     ]
 
     const website = [
-        {title: 'https://amdaniwasa.com/', description: "", rowId:"web"}]
+        {title: 'https://janithsadanuwan.blogspot.com/', description: "", rowId:"web"}]
        
     const sections = [{title: "TTP List", rows: rows}, {title: "Check official website :", rows: website}]
        
@@ -124,8 +113,8 @@ Amdi.operate({pattern: 'ttp ?(.*)', fromMe: LOL, desc: TTP_DESC, dontAddCommandL
 
 
 // ==================TTP LIST===================================
-Amdi.operate({ pattern: 'attp ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'attp ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
+  await QueenNilu.nilu_setup()
   if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text, {quoted: message.data});
     var uri = encodeURI(match[1])
     var ttinullimage = await axios.get('https://api.xteam.xyz/attp?file&text=' + uri, { responseType: 'arraybuffer' })
@@ -133,18 +122,18 @@ Amdi.operate({ pattern: 'attp ?(.*)', fromMe: LOL, deleteCommand: false , dontAd
 }));
 
 
-Amdi.operate({ pattern: 'qattpwater ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qattpwater ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
+  await QueenNilu.nilu_setup()
   if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text,  {quoted: message.data});
-        var ttinullimage = await QueenAmdi.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Water?_variations=true&text=', '&_loc=catdynamic')
+        var ttinullimage = await QueenNilu.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Water?_variations=true&text=', '&_loc=catdynamic')
         var download = async(uri, filename, callback) => {
           await request.head(uri, async(err, res, body) => {    
             await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
           });
         };
-        await download(ttinullimage.image, '/root/QueenAmdi/wttp.png', async() => { 
-          ffmpeg('/root/QueenAmdi/wttp.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
-            ffmpeg('/root/QueenAmdi/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
+        await download(ttinullimage.image, '/root/Queen-Nilu/wttp.png', async() => { 
+          ffmpeg('/root/Queen-Nilu/wttp.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
+            ffmpeg('/root/Queen-Nilu/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
               await message.sendMessage(fs.readFileSync('st.webp'), MessageType.sticker,  {quoted: message.data});
             })
           })
@@ -152,18 +141,18 @@ Amdi.operate({ pattern: 'qattpwater ?(.*)', fromMe: LOL, deleteCommand: false , 
 }));
 
 
-Amdi.operate({ pattern: 'qattppink ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qattppink ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
+  await QueenNilu.nilu_setup()
   if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text,  {quoted: message.data});
-        var ttinullimage = await QueenAmdi.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Style?_variations=true&text=', '&_loc=catdynamic')
+        var ttinullimage = await QueenNilu.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Style?_variations=true&text=', '&_loc=catdynamic')
         var download = async(uri, filename, callback) => {
           await request.head(uri, async(err, res, body) => {    
             await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
           });
         };
-        await download(ttinullimage.image, '/root/QueenAmdi/http.png', async() => { 
-          ffmpeg('/root/QueenAmdi/http.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
-            ffmpeg('/root/QueenAmdi/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
+        await download(ttinullimage.image, '/root/Queen-Nilu/http.png', async() => { 
+          ffmpeg('/root/Queen-Nilu/http.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
+            ffmpeg('/root/Queen-Nilu/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
               await message.sendMessage(fs.readFileSync('st.webp'), MessageType.sticker,  {quoted: message.data});
             })
           })
@@ -171,18 +160,18 @@ Amdi.operate({ pattern: 'qattppink ?(.*)', fromMe: LOL, deleteCommand: false , d
 }));
 
 
-Amdi.operate({ pattern: 'qattpblack ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qattpblack ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
+  await QueenNilu.nilu_setup()
   if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text,  {quoted: message.data});
-        var ttinullimage = await QueenAmdi.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Blackbird?_variations=true&text=', '&_loc=catdynamic')
+        var ttinullimage = await QueenNilu.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Blackbird?_variations=true&text=', '&_loc=catdynamic')
         var download = async(uri, filename, callback) => {
           await request.head(uri, async(err, res, body) => {    
             await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
           });
         };
-        await download(ttinullimage.image, '/root/QueenAmdi/bttp.png', async() => { 
-          ffmpeg('/root/QueenAmdi/bttp.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
-            ffmpeg('/root/QueenAmdi/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
+        await download(ttinullimage.image, '/root/Queen-Nilu/bttp.png', async() => { 
+          ffmpeg('/root/Queen-Nilu/bttp.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
+            ffmpeg('/root/Queen-Nilu/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
               await message.sendMessage(fs.readFileSync('st.webp'), MessageType.sticker,  {quoted: message.data});
             })
           })
@@ -190,18 +179,18 @@ Amdi.operate({ pattern: 'qattpblack ?(.*)', fromMe: LOL, deleteCommand: false , 
 }));
 
 
-Amdi.operate({ pattern: 'qattpf ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qattpf ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
+  await QueenNilu.nilu_setup()
   if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text,  {quoted: message.data});
-        var ttinullimage = await QueenAmdi.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Fluffy?_variations=true&text=', '&_loc=catdynamic')
+        var ttinullimage = await QueenNilu.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Fluffy?_variations=true&text=', '&_loc=catdynamic')
         var download = async(uri, filename, callback) => {
           await request.head(uri, async(err, res, body) => {    
             await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
           });
         };
-        await download(ttinullimage.image, '/root/QueenAmdi/gttp.png', async() => { 
-          ffmpeg('/root/QueenAmdi/gttp.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
-            ffmpeg('/root/QueenAmdi/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
+        await download(ttinullimage.image, '/root/Queen-Nilu/gttp.png', async() => { 
+          ffmpeg('/root/Queen-Nilu/gttp.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
+            ffmpeg('/root/Queen-Nilu/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
               await message.sendMessage(fs.readFileSync('st.webp'), MessageType.sticker,  {quoted: message.data});
             })
           })
@@ -209,36 +198,36 @@ Amdi.operate({ pattern: 'qattpf ?(.*)', fromMe: LOL, deleteCommand: false , dont
 }));
 
 
-Amdi.operate({ pattern: 'qattpsm ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qattpsm ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
+  await QueenNilu.nilu_setup()
   if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text, {quoted: message.data});
-        var ttinullimage = await QueenAmdi.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Smurfs?_variations=true&text=', '&_loc=catdynamic')
+        var ttinullimage = await QueenNilu.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Smurfs?_variations=true&text=', '&_loc=catdynamic')
         var download = async(uri, filename, callback) => {
           await request.head(uri, async(err, res, body) => {    
             await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
           });
         };
-        await download(ttinullimage.image, '/root/QueenAmdi/sttp.png', async() => { 
-          ffmpeg('/root/QueenAmdi/sttp.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
-            ffmpeg('/root/QueenAmdi/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
+        await download(ttinullimage.image, '/root/Queen-Nilu/sttp.png', async() => { 
+          ffmpeg('/root/Queen-Nilu/sttp.png').videoFilters('chromakey=white').save('af.png').on('end', async () => {
+            ffmpeg('/root/Queen-Nilu/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
               await message.sendMessage(fs.readFileSync('st.webp'), MessageType.sticker, {quoted: message.data});
             })
           })
         })
 }));
 
-Amdi.operate({ pattern: 'qattpelec ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qattpelec ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
+  await QueenNiu.nilu_setup()
   if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text, {quoted: message.data});
-        var ttinullimage = await QueenAmdi.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Electric?_variations=true&text=', '&_loc=catdynamic')
+        var ttinullimage = await QueenNilu.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Electric?_variations=true&text=', '&_loc=catdynamic')
         var download = async(uri, filename, callback) => {
           await request.head(uri, async(err, res, body) => {    
             await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
           });
         };
-        await download(ttinullimage.image, '/root/QueenAmdi/ettp.png', async() => { 
-          ffmpeg('/root/QueenAmdi/ettp.png').videoFilters('chromakey=#FFFFFF:similarity=0.01').save('af.png').on('end', async () => {
-            ffmpeg('/root/QueenAmdi/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
+        await download(ttinullimage.image, '/root/Queen-Nilu/ettp.png', async() => { 
+          ffmpeg('/root/Queen-Nilu/ettp.png').videoFilters('chromakey=#FFFFFF:similarity=0.01').save('af.png').on('end', async () => {
+            ffmpeg('/root/Queen-Nilu/af.png').outputOptions(["-y", "-vcodec libwebp"]).videoFilters('scale=2000:2000:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=2000:2000:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('st.webp').on('end', async () => {
               await message.sendMessage(fs.readFileSync('st.webp'), MessageType.sticker, {quoted: message.data});
             })
           })
@@ -246,18 +235,18 @@ Amdi.operate({ pattern: 'qattpelec ?(.*)', fromMe: LOL, deleteCommand: false , d
 }));
 
 
-Amdi.operate({ pattern: 'qattphigh ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qattphigh ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
+  await QueenNilu.nilu_setup()
   if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text, {quoted: message.data});
-        var ttinullimage = await QueenAmdi.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Highlight-Animation?_variations=true&text=', '&_loc=catdynamic')
+        var ttinullimage = await QueenNilu.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Highlight-Animation?_variations=true&text=', '&_loc=catdynamic')
         var download = async(uri, filename, callback) => {
           await request.head(uri, async(err, res, body) => {    
             await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
           });
         };
-        await download(ttinullimage.image, '/root/QueenAmdi/ahttp.gif', async() => { 
-          ffmpeg('/root/QueenAmdi/ahttp.gif').videoFilters('chromakey=black').save('af.gif').on('end', async () => {
-            ffmpeg('/root/QueenAmdi/af.gif').outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 600x600"]).videoFilters('scale=600:600:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=600:600:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('sticker.webp').on('end', async () => {
+        await download(ttinullimage.image, '/root/Queen-Nilu/ahttp.gif', async() => { 
+          ffmpeg('/root/Queen-Nilu/ahttp.gif').videoFilters('chromakey=black').save('af.gif').on('end', async () => {
+            ffmpeg('/root/Queen-Nilu/af.gif').outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 600x600"]).videoFilters('scale=600:600:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=600:600:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('sticker.webp').on('end', async () => {
               await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker, {quoted: message.data});
             })
           })
@@ -265,18 +254,18 @@ Amdi.operate({ pattern: 'qattphigh ?(.*)', fromMe: LOL, deleteCommand: false , d
 }));
 
 
-Amdi.operate({ pattern: 'qattpmem ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
-  await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qattpmem ?(.*)', fromMe: LOL, deleteCommand: false , dontAddCommandList: true}, (async (message, match) => {
+  await QueenNilu.nilu_setup()
   if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD, MessageType.text, {quoted: message.data});
-        var ttinullimage = await QueenAmdi.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Memories-Animation?_variations=true&text=', '&_loc=catdynamic')
+        var ttinullimage = await QueenNilu.ttp(match[1], 'https://api.flamingtext.com/logo/Design-Memories-Animation?_variations=true&text=', '&_loc=catdynamic')
         var download = async(uri, filename, callback) => {
           await request.head(uri, async(err, res, body) => {    
             await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
           });
         };
-        await download(ttinullimage.image, '/root/QueenAmdi/pttp.gif', async() => { 
-          ffmpeg('/root/QueenAmdi/pttp.gif').videoFilters('chromakey=white').save('af.gif').on('end', async () => {
-            ffmpeg('/root/QueenAmdi/af.gif').outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 600x600"]).videoFilters('scale=600:600:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=600:600:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('sticker.webp').on('end', async () => {
+        await download(ttinullimage.image, '/root/Queen-Nilu/pttp.gif', async() => { 
+          ffmpeg('/root/Queen-Nilu/pttp.gif').videoFilters('chromakey=white').save('af.gif').on('end', async () => {
+            ffmpeg('/root/Queen-Nilu/af.gif').outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 600x600"]).videoFilters('scale=600:600:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=600:600:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1').save('sticker.webp').on('end', async () => {
               await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker, {quoted: message.data});
             })
           })
