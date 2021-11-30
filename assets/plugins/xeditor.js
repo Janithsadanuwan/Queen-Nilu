@@ -1,24 +1,14 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
+
 ╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
 Copyright (C) 2021 Black Amda.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu= require('queennilu-public');
+const Nilu= QueenNilu.events
+const Build = QueenNilu.build
 
 const {MessageType,Mimetype} = require('@blackamda/queenamdi-web-api');
 const fs = require('fs');
@@ -204,13 +194,13 @@ const sin = `💠🔮 *මාධ්‍ය සංස්කාරක* 🔮💠\n\n
 
 if (Build.LANG == 'EN' || Build.LANG == 'ES') {
     if (Build.WORKTYPE == 'private') {
-         Amdi.operate({pattern: 'editor', fromMe: true,  deleteCommand: false, desc: EDITOR_DESC}, (async (message, match) => {    
+         Nilu.operate({pattern: 'editor', fromMe: true,  deleteCommand: false, desc: EDITOR_DESC}, (async (message, match) => {    
             await message.client.sendMessage(message.jid,eng, MessageType.text,{quoted: message.data});
         }));
     }
     
     else if (Build.WORKTYPE == 'public') {
-        Amdi.operate({pattern: 'editor', fromMe: false, desc: EDITOR_DESC}, (async (message, match) => {    
+        Nilu.operate({pattern: 'editor', fromMe: false, desc: EDITOR_DESC}, (async (message, match) => {    
             await message.client.sendMessage(message.jid,eng, MessageType.text,{quoted: message.data});
         }));
     }
@@ -218,19 +208,19 @@ if (Build.LANG == 'EN' || Build.LANG == 'ES') {
     
 if (Build.LANG == 'SI') {
     if (Build.WORKTYPE == 'private') {
-        Amdi.operate({pattern: 'editor', fromMe: true,  deleteCommand: false, desc: EDITOR_DESC}, (async (message, match) => {    
+        Nilu.operate({pattern: 'editor', fromMe: true,  deleteCommand: false, desc: EDITOR_DESC}, (async (message, match) => {    
             await message.client.sendMessage(message.jid,sin, MessageType.text,{quoted: message.data});
         }));
     }
     
     else if (Build.WORKTYPE == 'public') {
-        Amdi.operate({pattern: 'editor', fromMe: false, desc: EDITOR_DESC}, (async (message, match) => {    
+        Nilu.operate({pattern: 'editor', fromMe: false, desc: EDITOR_DESC}, (async (message, match) => {    
             await message.client.sendMessage(message.jid,sin, MessageType.text,{quoted: message.data});
         }));
     }
 }
 
-    Amdi.operate({pattern: 'x4mp4', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'x4mp4', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message.video) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -252,7 +242,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'x2mp4', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'x2mp4', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message.video) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -274,7 +264,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4image', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp4image', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message.image) return await message.sendMessage('*Need a photo!!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -298,7 +288,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'spectrum', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'spectrum', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -319,7 +309,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'waves', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'waves', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -340,7 +330,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'frequency', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'frequency', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -361,7 +351,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'avec', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
+    Nilu.operate({pattern: 'avec', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
  
         if (!message.reply_message) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -382,7 +372,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'volumeaudio', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'volumeaudio', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -403,7 +393,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'cqtaudio', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'cqtaudio', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -424,7 +414,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp3eq', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp3eq', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -445,7 +435,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp3crusher', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp3crusher', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -466,7 +456,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp3reverse', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp3reverse', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -487,7 +477,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4vintage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp4vintage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -509,7 +499,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4reverse', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
+    Nilu.operate({pattern: 'mp4reverse', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
  
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -532,7 +522,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4bw', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp4bw', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -554,7 +544,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'bwimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'bwimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a photo!!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -575,7 +565,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'vintageimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'vintageimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a photo!!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -596,7 +586,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4enhance', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp4enhance', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -618,7 +608,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'blurimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
+    Nilu.operate({pattern: 'blurimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
  
         if (message.reply_message === false) return await message.sendMessage('*Need a photo!!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -639,7 +629,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4blur', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
+    Nilu.operate({pattern: 'mp4blur', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
  
         if (message.reply_message === false) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -660,7 +650,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp3pitch', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp3pitch', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -681,7 +671,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4edge', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp4edge', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```Edging Video..```',MessageType.text);
@@ -703,7 +693,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp3low', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp3low', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -724,7 +714,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'x2mp3', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'x2mp3', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -745,7 +735,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'edgeimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'edgeimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need Photo*');
         var downloading = await message.client.sendMessage(message.jid,'```Edging Image..```',MessageType.text);
@@ -766,7 +756,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'enhanceimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'enhanceimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a photo!!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -787,7 +777,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp3volume', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => { 
+    Nilu.operate({pattern: 'mp3volume', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => { 
    
         if (message.reply_message === false) return await message.sendMessage('*Need a audio file!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -808,7 +798,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     })); 
 
-    Amdi.operate({pattern: 'gif', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'gif', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('Need a video!');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing to Gif..```',MessageType.text);
@@ -831,7 +821,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'agif', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'agif', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('Need a video!');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing to Gif..```',MessageType.text);
@@ -853,7 +843,7 @@ if (Build.LANG == 'SI') {
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'grenimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
+    Nilu.operate({pattern: 'grenimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
 
         if (message.reply_message === false) return await message.sendMessage('Need a photo!!');
         var downloading = await message.client.sendMessage(message.jid,'```Adding Gren..```',MessageType.text);
@@ -874,7 +864,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'interp ?(.*)', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'interp ?(.*)', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message.video) return await message.sendMessage('*Need Video and FPS Value!*\nEx: ```.interp 100```');
         if (message.reply_message.video && match[1] <= 10) return await message.sendMessage('*Low FPS Value ⚠️*\n*Please, type over 10*');
@@ -895,12 +885,12 @@ if (Build.LANG == 'SI') {
             .format('mp4')
             .save('output.mp4')
             .on('end', async () => {
-                await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {caption: `Copyright © 2021 | Queen Amdi\n_Interpolated to ${match[1]} FPS_`});
+                await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {caption: `Copyright © 2021 | Queen Nilu\n_Interpolated to ${match[1]} FPS_`});
             });
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'rainbowimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'rainbowimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a photo!!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -922,7 +912,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4rainbow', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {  
+    Nilu.operate({pattern: 'mp4rainbow', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {  
   
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -944,7 +934,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'negativeimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {  
+    Nilu.operate({pattern: 'negativeimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {  
   
         if (message.reply_message === false) return await message.sendMessage('*Need a photo!!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -965,7 +955,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4negative', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
+    Nilu.operate({pattern: 'mp4negative', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {   
  
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -987,7 +977,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4art', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp4art', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -1009,7 +999,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'artimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'artimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -1030,7 +1020,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4stab', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp4stab', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -1052,7 +1042,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4color', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp4color', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -1074,7 +1064,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'colorimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'colorimage', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage('*Need a photo!!*');
         var downloading = await message.client.sendMessage(message.jid,'```🪄 Media editing..```',MessageType.text);
@@ -1095,7 +1085,7 @@ if (Build.LANG == 'SI') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
 
-    Amdi.operate({pattern: 'mp4slowmo', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
+    Nilu.operate({pattern: 'mp4slowmo', fromMe: LOL, deleteCommand: false,dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message.video) return await message.sendMessage('*Need a video!*');
         var downloading = await message.client.sendMessage(message.jid,'```Motion Render Interpolating..```',MessageType.text);
@@ -1116,7 +1106,7 @@ if (Build.LANG == 'SI') {
             .format('mp4')
             .save('slowmo.mp4')
             .on('end', async () => {
-                await message.sendMessage(fs.readFileSync('slowmo.mp4'), MessageType.video, {caption: 'True Slow-Motion by Queen Amdi'});
+                await message.sendMessage(fs.readFileSync('slowmo.mp4'), MessageType.video, {caption: 'True Slow-Motion by Queen Nilu'});
             });
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: LOL})
     }));
