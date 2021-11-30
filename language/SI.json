@@ -1,10 +1,10 @@
 {
-    "__AMDIJSON__": true,
+    "__NILUJSON__": true,
     "LANGUAGE": "Sinhala",
     "LANGCODE": "sinhala",
     "AUTHOR": "Janith sadanuwan",
     "STRINGS": {
-        "_amdi": {
+        "_nilu": {
             "COMMAND": "විධානය",
             "DESC": "විස්තරය",
             "EXAMPLE": "උදාහරණයක්",
@@ -249,7 +249,7 @@
             "SAVE_USAGE": "පණිවිඩයකට mention දී ටයිප් කරන්න .save හෝ භාවිතා කරන්න .save <ඔබේ සටහන>",
             "REPLY": "කරුණාකර සටහනක් හෝ පණිවිඩයකට mention දෙන්න.",
             "SUCCESSFULLY_ADDED": "Successfully added new note, check your notes with .notes.",
-            "UNSUCCESSFUL": "Could not add note, please try again later or contact QueenAmdi developers.",
+            "UNSUCCESSFUL": "Could not add note, please try again later or contact QueenNilu developers.",
             "DELETE_USAGE": "ඔබගේ සුරකින ලද සටහන් *සියල්ල* මකා දමයි.",
             "SUCCESSFULLY_DELETED": "Successfully deleted all your notes."
         },
@@ -337,7 +337,7 @@
             "GETTING_VIDEOS": "```🔎 කරුණාකර රැඳී සිටින්න, වීඩියෝ serach කරමින් පවති...```",
             "YTS":"_📡 පදනම් කරගත් වෙබ් අඩවිය : YouTube_"
         },
-        "serveramdi": {
+        "servernilu": {
             "TERM_DESC": "Server command shell ක්‍රියාත්මක කිරීමට ඉඩ දෙන්න.",
             "GIVE_ME_CODE": "*මට කේතයක් දෙන්න!*"
         },
@@ -449,7 +449,7 @@
             "PING_DESC": "ඔබේ ping මැනීම.",
             "URL": "Links shorten කරන්න.",
             "NEED": "*Link අවශ්‍යයි!*",
-            "AMDI_QR": "Queen Nilu Bot install කිරීමට QR කේතය ලබා ගන්න.",
+            "NILU_QR": "Queen Nilu Bot install කිරීමට QR කේතය ලබා ගන්න.",
             "HELP_QR": "1️⃣ *QR කේතය* scan කරන්න.\n\n2️⃣ https://heroku.com/deploy?template=https://github.com/Janithsadanuwan/Queen-Nilu වෙත පිවිස Queen Nilu Bot install කරගන්න. _(QR උත්පාදනය නැවැත්වීමට *.getqr stop* ටයිප් කරන්න)_",
             "INBOX": "*කරුණාකර inbox වෙත command යැවීමෙන් QR ලබා ගන්න. _(.getqr)_*"
         }

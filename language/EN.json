@@ -1,10 +1,10 @@
 {
-    "__AMDIJSON__": true,
+    "__NILUJSON__": true,
     "LANGUAGE": "English",
     "LANGCODE": "english",
     "AUTHOR": "Janith sadanuwan",
     "STRINGS": {
-        "_amdi": {
+        "_nilu": {
             "COMMAND": "Command",
             "DESC": "Description",
             "EXAMPLE": "Example",
@@ -247,7 +247,7 @@
             "SAVE_USAGE": "Reply *.save* to a message or type *.save <your_note>*",
             "REPLY": "Please give me the note.",
             "SUCCESSFULLY_ADDED": "Successfully added new note, check your notes with .notes.",
-            "UNSUCCESSFUL": "Could not add note, please try again later or contact QueenAmdi developers.",
+            "UNSUCCESSFUL": "Could not add note, please try again later or contact QueenNilu developers.",
             "DELETE_USAGE": "Clear your all notes.",
             "SUCCESSFULLY_DELETED": "Successfully deleted all your notes."
         },
@@ -335,7 +335,7 @@
             "GETTING_VIDEOS": "```🔎 Please wait, the video is being searched...```",
             "YTS":"_📡 Based site : YouTube_"
         },
-        "serveramdi": {
+        "servernilu": {
             "TERM_DESC": "Allow server command shell to run.",
             "GIVE_ME_CODE": "*Give me a code!*"
         },
@@ -447,7 +447,7 @@
             "PING_DESC": "Your ping.",
             "URL": "Shorten link.",
             "NEED": "*Need a link!*",
-            "AMDI_QR": "Get QR code to install Queen Nilu Bot.",
+            "NILU_QR": "Get QR code to install Queen Nilu Bot.",
             "HELP_QR": "1️⃣ Scan the *QR code.*\n\n2️⃣ Visit https://heroku.com/deploy?template=https://github.com/Janithsadanuwan/Queen-Nilu to install the bot. _(Type *.getqr stop* to stop QR generating)_",
             "INBOX": "*Please get QR from messaging to inbox. _(.getqr)_*"
         }
