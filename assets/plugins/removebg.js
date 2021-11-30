@@ -22,7 +22,7 @@ const Lang = Language.getString('removebg');
 let LOL = Build.WORKTYPE == 'public' ? false : true
 
 Nilu.operate({pattern: 'removebg ?(.*)', fromMe: LOL, desc: Lang.REMOVEBG_DESC,  deleteCommand: false}, (async (message, match) => {    
-    await QueenAmdi.amdi_setup()
+    await QueenNilu.nilu_setup()
     if (message.reply_message === false || message.reply_message.image === false) return await message.client.sendMessage(message.jid,Lang.NEED_PHOTO,MessageType.text, {quoted: message.data});
     if (Build.RBG_API_KEY === false) return await message.client.sendMessage(message.jid,Lang.NO_API_KEY,MessageType.text, {quoted: message.data});
     
@@ -51,6 +51,6 @@ Nilu.operate({pattern: 'removebg ?(.*)', fromMe: LOL, desc: Lang.REMOVEBG_DESC, 
 		fs.createWriteStream('rbg.png')
     );
     
-    await message.client.sendMessage(message.jid,fs.readFileSync('rbg.png'), MessageType.document, {filename: 'QueenAmdi.png', mimetype: Mimetype.png, quoted: message.data});
+    await message.client.sendMessage(message.jid,fs.readFileSync('rbg.png'), MessageType.document, {filename: 'QueenNilu.png', mimetype: Mimetype.png, quoted: message.data});
     return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 }));

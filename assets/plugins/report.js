@@ -5,17 +5,17 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 const {MessageType} = require('@blackamda/queenamdi-web-api');
 
 const Language = require('../language');
 const Lang = Language.getString('report');
 
 if (Build.WORKTYPE == 'private') {
-    Amdi.operate({pattern: 'report ?(.*)', fromMe: true, desc: Lang.REPORT,  deleteCommand: false}, (async (message, match) => {
-        await QueenAmdi.amdi_setup()
+    Nilu.operate({pattern: 'report ?(.*)', fromMe: true, desc: Lang.REPORT,  deleteCommand: false}, (async (message, match) => {
+        await QueenNilu.nilu_setup()
         if (match[1] == '' && message.reply_message) {
             let grp = await message.client.groupMetadata(message.jid);
             var jids = [];
@@ -54,8 +54,8 @@ if (Build.WORKTYPE == 'private') {
 }
 
 else if (Build.WORKTYPE == 'public') {
-    Amdi.operate({pattern: 'report ?(.*)', fromMe: false, desc: Lang.REPORT}, (async (message, match) => {
-        await QueenAmdi.amdi_setup()
+    Nilu.operate({pattern: 'report ?(.*)', fromMe: false, desc: Lang.REPORT}, (async (message, match) => {
+        await QueenNilu.Nilu_setup()
         if (match[1] == '' && message.reply_message) {
             let grp = await message.client.groupMetadata(message.jid);
             var jids = [];

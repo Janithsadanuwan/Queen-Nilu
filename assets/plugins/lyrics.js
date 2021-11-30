@@ -22,7 +22,7 @@ Nilu.operate({ pattern: 'lyric ?(.*)', fromMe: LOL, desc: Lang.LY_DESC,  deleteC
 
     try {
         const title = match[1]
-        const lyricdata = await QueenAmdi.lyric(title)
+        const lyricdata = await QueenNilu.lyric(title)
 
         var media = await axios.get(lyricdata.thumb, {responseType: 'arraybuffer'})
         var PIC = Buffer.from(media.data)
