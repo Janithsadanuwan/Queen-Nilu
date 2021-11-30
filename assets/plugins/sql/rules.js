@@ -5,8 +5,8 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const queennilu = require('queennilu-public');
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Build = QueenNilu.build
 const { DataTypes } = require('sequelize');
 
 const RulesDB = Build.DATABASE.define('Rules', {
