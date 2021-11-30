@@ -18,7 +18,7 @@ class StringSession {
             if (fs.existsSync(string)) {
                 string = fs.readFileSync(string, {encoding:'utf8', flag:'r'});
             }
-        }
+         }
         
         var split = string.split(';;;');
         if (split.length >= 2) {

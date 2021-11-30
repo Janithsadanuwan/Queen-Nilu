@@ -5,9 +5,9 @@ Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenNilu = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
 const {MessageType,Mimetype} = require('@blackamda/queenamdi-web-api');
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
@@ -18,7 +18,7 @@ const Lang = Language.getString('unvoice'); // Language support
 
 if (Build.WORKTYPE == 'private') {
 
-    Amdi.operate({pattern: 'unvoice', fromMe: true, desc: Lang.UV_DESC,  deleteCommand: false}, (async (message, match) => {    
+    Nilu.operate({pattern: 'unvoice', fromMe: true, desc: Lang.UV_DESC,  deleteCommand: false}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage(Lang.UV_REPLY);
         var downloading = await message.client.sendMessage(message.jid,Lang.UV_PROC,MessageType.text);
@@ -41,7 +41,7 @@ if (Build.WORKTYPE == 'private') {
 }
 else if (Build.WORKTYPE == 'public') {
 
-    Amdi.operate({pattern: 'unvoice', fromMe: false, desc: Lang.UV_DESC}, (async (message, match) => {    
+    Nilu.operate({pattern: 'unvoice', fromMe: false, desc: Lang.UV_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendMessage(Lang.UV_REPLY);
         var downloading = await message.client.sendMessage(message.jid,Lang.UV_PROC,MessageType.text);
