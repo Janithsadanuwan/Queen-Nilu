@@ -1,25 +1,14 @@
 /*
-░██████╗░██╗░░░██╗███████╗███████╗███╗░░██╗
-██╔═══██╗██║░░░██║██╔════╝██╔════╝████╗░██║
-██║██╗██║██║░░░██║█████╗░░█████╗░░██╔██╗██║
-╚██████╔╝██║░░░██║██╔══╝░░██╔══╝░░██║╚████║
-░╚═██╔═╝░╚██████╔╝███████╗███████╗██║░╚███║
-░░░╚═╝░░░░╚═════╝░╚══════╝╚══════╝╚═╝░░╚══╝
-░█████╗░███╗░░░███╗██████╗░██╗
-██╔══██╗████╗░████║██╔══██╗██║
-███████║██╔████╔██║██║░░██║██║
-██╔══██║██║╚██╔╝██║██║░░██║██║ █▀█ █▀▀█ █▀█ ▄█─ 
-██║░░██║██║░╚═╝░██║██████╔╝██║ ─▄▀ █▄▀█ ─▄▀ ─█─ 
-╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝ █▄▄ █▄▄█ █▄▄ ▄█▄
-Copyright (C) 2021 Black Amda.
+
+Copyright (C) 2021 💙𝗤𝘂𝗲𝗲𝗻 𝗡𝗶𝗹𝘂💙.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
 
-const QueenAmdi = require('queenamdi-public');
-const Amdi = QueenAmdi.events
-const Build = QueenAmdi.build
-const { ytaudio, ytvideo, ythd } = QueenAmdi.ytdl
+const QueenNilu = require('queennilu-public');
+const Nilu = QueenNilu.events
+const Build = QueenNilu.build
+const { ytaudio, ytvideo, ythd } = QueenNilu.ytdl
 const {MessageType,Mimetype} = require('@blackamda/queenamdi-web-api');
 const axios = require('axios')
 const Language = require('../language');
@@ -33,10 +22,10 @@ let LOL = Build.WORKTYPE == 'public' ? false : true
 
 //===================SONG===================
 var SONGYT = ''
-if (Build.LANG == 'EN') SONGYT = '╔═══════❪💃🏻♥️❫\n\n▷ *YouTube Song Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nSelect song type :'
-if (Build.LANG == 'SI') SONGYT = '╔═══════❪💃🏻♥️❫\n\n▷ *YouTube Song Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nSong type තෝරන්න :'
-Amdi.operate({ pattern: 'qaytsong ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+if (Build.LANG == 'EN') SONGYT = '╔═══════❪💃🏻💙❫\n\n▷ *YouTube Song Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nSelect song type :'
+if (Build.LANG == 'SI') SONGYT = '╔═══════❪💃🏻💙❫\n\n▷ *YouTube Song Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nSong type තෝරන්න :'
+Nilu.operate({ pattern: 'qaytsong ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const ytLink = match[1]
 
     var BUTTHANDLE = '';
@@ -61,8 +50,8 @@ Amdi.operate({ pattern: 'qaytsong ?(.*)', fromMe: LOL,  deleteCommand: false, do
     await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage, {quoted: message.data});
 }))
 
-Amdi.operate({ pattern: 'qasongdoc ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qasongdoc ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const ytLink = match[1]
     const ytdata = await ytaudio(ytLink)
     var downloading = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_SONG,MessageType.text, {quoted: message.data});
@@ -73,8 +62,8 @@ Amdi.operate({ pattern: 'qasongdoc ?(.*)', fromMe: LOL,  deleteCommand: false, d
     return await message.client.deleteMessage(message.jid, {id: uploading.key.id, remoteJid: message.jid, fromMe: true})
 }))
 
-Amdi.operate({ pattern: 'qasongaudio ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qasongaudio ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const ytLink = match[1]
     const ytdata = await ytaudio(ytLink)
     var downloading = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_SONG,MessageType.text, {quoted: message.data});
@@ -85,8 +74,8 @@ Amdi.operate({ pattern: 'qasongaudio ?(.*)', fromMe: LOL,  deleteCommand: false,
     return await message.client.deleteMessage(message.jid, {id: uploading.key.id, remoteJid: message.jid, fromMe: true})
 }))
 
-/*Amdi.operate({ pattern: 'qasongplay ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+/*Nilu.operate({ pattern: 'qasongplay ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const ytLink = match[1]
     const ytdata = await ytaudio(ytLink)
     var downloading = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_SONG,MessageType.text, {quoted: message.data});
@@ -100,9 +89,9 @@ Amdi.operate({ pattern: 'qasongaudio ?(.*)', fromMe: LOL,  deleteCommand: false,
 
 //===================VIDEO===================
 var VIDYT = ''
-if (Build.LANG == 'EN') VIDYT = '╔═══════❪💃🏻♥️❫\n\n▷ *YouTube Video Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nSelect video quality :'
-if (Build.LANG == 'SI') VIDYT = '╔═══════❪💃🏻♥️❫\n\n▷ *YouTube Video Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nVideo quality තෝරන්න :'
-Amdi.operate({ pattern: 'qaytvideo ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+if (Build.LANG == 'EN') VIDYT = '╔═══════❪💃🏻💙❫\n\n▷ *YouTube Video Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nSelect video quality :'
+if (Build.LANG == 'SI') VIDYT = '╔═══════❪💃🏻💙\n\n▷ *YouTube Video Downloader* ◁\n\n╚═════≪ •❈• ≫═════\nVideo quality තෝරන්න :'
+Nilu.operate({ pattern: 'qaytvideo ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
     const ytLink = match[1]
 
     var BUTTHANDLE = '';
@@ -126,8 +115,8 @@ Amdi.operate({ pattern: 'qaytvideo ?(.*)', fromMe: LOL,  deleteCommand: false, d
     await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage, {quoted: message.data});
 }))
 
-Amdi.operate({ pattern: 'qavideohd ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qavideohd ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const ytLink = match[1]
     const ytdata = await ythd(ytLink)
     var downloading = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_VIDEO,MessageType.text, {quoted: message.data})
@@ -138,8 +127,8 @@ Amdi.operate({ pattern: 'qavideohd ?(.*)', fromMe: LOL,  deleteCommand: false, d
     return await message.client.deleteMessage(message.jid, {id: uploading.key.id, remoteJid: message.jid, fromMe: true})
 }))
 
-Amdi.operate({ pattern: 'qavideosd ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({ pattern: 'qavideosd ?(.*)', fromMe: LOL,  deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const ytLink = match[1]
     const ytdata = await ytvideo(ytLink)
     var downloading = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_VIDEO,MessageType.text, {quoted: message.data})
