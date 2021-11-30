@@ -59,16 +59,16 @@ Nilu.operate({pattern: 'alive', fromMe: LOL, desc: Lang.ALIVE_DESC,  deleteComma
     await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage);
 }))
 
-Amdi.operate({pattern: 'qasysstats', fromMe: LOL, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'qasysstats', fromMe: LOL, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
     await message.sendMessage(
         '```' + child + '```', MessageType.text, {quoted: message.data}
     );
 }));
 
-Amdi.operate({pattern: 'qaversion', fromMe: LOL, desc: Lang.BOT_V, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
-    await QueenAmdi.amdi_setup()
+Nilu.operate({pattern: 'qaversion', fromMe: LOL, desc: Lang.BOT_V, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+    await QueenNilu.nilu_setup()
     await message.client.sendMessage(message.jid, 
         `*🚀 ǫᴜᴇᴇɴ ɴɪʟᴜ Version 🚀*\n\n` + 
         '```Installed version :```\n' +
